@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="profile">
+    <div class="row">
+      <div class="col-md-auto">
+        <img
+          src="./assets/user/User_Circle.png"
+          alt="profile"
+          class="profile-pic"
+        />
+      </div>
+      <div class="col" style="margin-top: 50px">
+        <h1>
+          {{ userService.user.userFirstName }}
+          {{ userService.user.userLastName }}
+        </h1>
+        <h1>Artist</h1>
+      </div>
+
+      <div class="col" style="float: right">
+        <button
+          type="button"
+          class="btn btn-primary"
+          [routerLink]="['/artists']"
+        >
+          Back
+        </button>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="form-group" style="width: 100%">
+      <label for="exampleFormControlTextarea1"><h2>Artist Bio</h2></label>
+      <textarea
+        class="form-control"
+        readonly
+        id="exampleFormControlTextarea1"
+        rows="5"
+        >{{ userService.user.artistBio }}
+        </textarea
+      >
+    </div>
+  </div>
+  <br />
+  <!-- <div class="row">
+    <h2>Profile Artworks</h2>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img
+        src="./assets/artworks/profile-works1.png"
+        alt="profile"
+        class="profile-works"
+      />
+    </div>
+    <div class="col">
+      <img
+        src="./assets/artworks/profile-works2.png"
+        alt="profile"
+        class="profile-works"
+      />
+    </div>
+    <div class="col">
+      <img
+        src="./assets/artworks/profile-works3.png"
+        alt="profile"
+        class="profile-works"
+      />
+    </div> -->
+  <!-- </div> -->
+</div>

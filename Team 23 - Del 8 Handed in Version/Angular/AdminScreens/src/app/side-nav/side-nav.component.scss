@@ -1,0 +1,73 @@
+.container {
+  margin: 20px;
+  padding: 20px;
+}
+
+mat-sidenav-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+button {
+  width: 200px;
+  border-radius: 20px;
+  color: rgb(7, 118, 161);
+}
+
+a {
+  width: 200px;
+  border-radius: 20px;
+  color: rgb(7, 118, 161);
+}
+
+.nav-button {
+  background-color: black;
+}
+
+.logo {
+  width: 250px;
+}
+
+.background {
+  //  background-image: url("https://i.pinimg.com/originals/76/5b/bd/765bbdda62f4db4f222ea1a3e32bc6a7.png");
+  background-color: rgba(128, 128, 128, 0.445);
+  height: 100%;
+}
+
+.sideNavButton {
+  font-size: 20px;
+  color: #000;
+  font-weight: 400;
+  font-style: arial;
+}
+
+a {
+  color: rgb(0, 195, 255);
+}
+
+button {
+  background: rgba(128, 128, 128, 0.445);
+  width: 100%;
+}
+
+.sideNavButton:hover {
+  background-color: rgba(0, 195, 255, 0.699);
+}
+
+mat-menu-item:hover {
+  background-color: rgba(0, 195, 255, 0.185);
+}
+
+.menuButton {
+  color: rgb(0, 195, 255);
+  text-align: center;
+  width: 100%;
+  background-color: rgba(15, 15, 15, 0.438);
+}
+
+.menuButton:hover {
+  background: rgba(0, 195, 255, 0.185);
+}

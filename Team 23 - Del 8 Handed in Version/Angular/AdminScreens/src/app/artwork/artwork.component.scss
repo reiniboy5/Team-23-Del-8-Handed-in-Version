@@ -1,0 +1,34 @@
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+button {
+  border-radius: 20px;
+}
+
+.validation-message {
+  color: red;
+  border-color: red;
+}
+
+.success {
+  color: rgb(7, 201, 7);
+}
+
+.artwork-image {
+  width: 80%;
+  height: 80%;
+}
+
+.card {
+  border-radius: 20px;
+}
+
+.card > img {
+  margin-bottom: 0.75rem;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}

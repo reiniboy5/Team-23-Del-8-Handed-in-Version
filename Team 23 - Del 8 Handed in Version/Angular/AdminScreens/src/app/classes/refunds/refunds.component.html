@@ -1,0 +1,112 @@
+<div class="container">
+  <h1>Refunds</h1>
+
+  <hr />
+  <h2>Requested Refunds</h2>
+
+  <br />
+
+  <table class="table">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Art Class</th>
+        <th scope="col">Refund Status</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of refundList">
+        <td>{{ item.artClassRefunded }}</td>
+        <td>{{ item.refundStatus }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-success"
+            href="/refunds"
+            (click)="onApprove(approveModal); storeID(item.refundID)"
+          >
+            Approve
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="onDecline(declineModal); storeID(item.refundID)"
+          >
+            Decline
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #approveModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Approve Refund</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to approve this refund?</p>
+  </div>
+  <br />
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.dismiss('Cross click')"
+    >
+      No
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="confirmApprove(approveModal)"
+    >
+      Yes
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #declineModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Decline Refund</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to decline this refund?</p>
+  </div>
+  <br />
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.dismiss('Cross click')"
+    >
+      No
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="confirmDecline(declineModal)"
+    >
+      Yes
+    </button>
+  </div>
+</ng-template>

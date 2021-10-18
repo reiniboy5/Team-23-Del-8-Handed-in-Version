@@ -1,0 +1,72 @@
+<div
+  class="page-padding"
+  *ngFor="let exhibition of listexhibition; let indexofElementc = index"
+>
+  <div class="row">
+    <div class="col">
+      <h1>{{ exhibition.exhibitionName }}</h1>
+    </div>
+    <div class="col">
+      <button
+        mdbBtn
+        type="button"
+        gradient="peach"
+        rounded="true"
+        style="float: right"
+        [routerLink]="['../exhibitions']"
+        mdbWavesEffect
+      >
+        Back
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img
+        class="card-img-top"
+        src="{{ exhibition.exhibitionImage }}"
+        alt="Card image cap"
+      />
+    </div>
+    <br />
+    <div class="col-8">
+      <p>
+        Exhibition Description:
+        {{ exhibition.exhibitionDescription }}
+      </p>
+      <p>Exhibition By:</p>
+      <ul class="list-group">
+        <li class="list-group-item">
+          {{ exhibition.organisation.organisationalName }}
+        </li>
+      </ul>
+      <hr />
+      <p>
+        Start-Date:
+        {{ exhibition.exhibitionStartDateTime | date: "mediumDate" }} at
+        {{ exhibition.exhibitionStartDateTime | date: "shortTime" }}
+      </p>
+      <P
+        >End-Date:
+        {{ exhibition.exhibitionEndDateTime | date: "mediumDate" }} at
+        {{ exhibition.exhibitionEndDateTime | date: "shortTime" }}</P
+      >
+      <p>Venue: {{ exhibition.venue.venueDescription }}</p>
+    </div>
+  </div>
+  <hr />
+  <ng-container *ngIf="!allart">
+    <button
+      mdbBtn
+      type="button"
+      gradient="purple"
+      rounded="true"
+      mdbWavesEffect
+      (click)="applyForExhibition(exhibition)"
+    >
+      Apply For Exhibition
+    </button>
+  </ng-container>
+  <!-- ==================================================================================== -->
+  <!-- =====================================================MODALS BELOW============================================ -->
+</div>

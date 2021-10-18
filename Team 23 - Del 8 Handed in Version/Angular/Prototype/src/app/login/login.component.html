@@ -1,0 +1,60 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img src="../assets/logo/artech.png" class="logo" alt="user">
+      </div>
+      <div class="col">
+
+        <div class="col"></div>
+        <div class="login-form" style="width: 350px">
+
+          <!-- <form class="text-center border border-light p-5"> -->
+          <div>
+            <p class="h4 mb-4">Welcome, Sign in</p>
+            <div class="text-center">
+              <img src="../assets/user/User_Circle.png" class="img-fluid" alt="user">
+            </div>
+            <br>
+            <!-- Email -->
+            <label></label>
+            <input type="text" formControlName="UserName" class="form-control"
+              style="width: 250px; margin-left: auto; margin-right: auto" placeholder="UserName">
+
+            <!-- Password -->
+            <label></label>
+            <input type="password" formControlName="Password" class="form-control"
+              style="width: 250px; margin-left: auto; margin-right: auto" placeholder="Password">
+
+            <div class="d-flex justify-content-around">
+              <div>
+                <!-- Forgot password -->
+                <a href="/reset-password">Reset Password</a>
+              </div>
+            </div>
+            <br>
+
+            <!--  Login button -->
+            <div>
+              <button mdbBtn type="submit" gradient="blue" rounded="true" mdbWavesEffect>Login</button>
+            </div>
+
+            <br>
+
+            <!-- Register -->
+            <p>Not a member?
+            </p>
+            <div class="row">
+              <div class="col">
+                <button mdbBtn type="button" gradient="aqua" style="width:200px;" rounded="true"
+                  [routerLink]="['/register']" mdbWavesEffect>Register</button>
+              </div>
+
+            </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

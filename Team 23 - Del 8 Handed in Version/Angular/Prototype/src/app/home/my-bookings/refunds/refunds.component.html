@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Class Name</th>
+      <th scope="col">Refund Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let refund of refunds">
+      <th scope="row" *ngFor="let pic of listBookings">
+        <div class="image-card">
+          <img
+            class="card-img-top"
+            src="{{ pic.artClass.artClassImage }}"
+            alt="Card image cap"
+          />
+        </div>
+      </th>
+      <td>{{ refund.artClassRefunded }}</td>
+      <td>{{ refund.refundStatus }}</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<br />

@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <h1>Exhibition Report</h1>
+  </div>
+  <hr />
+  <div class="row">
+    <label>Exhibition:</label>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend"></div>
+      <select
+        (click)="hideTable()"
+        class="custom-select"
+        id="inputGroupSelect01"
+        (change)="getExhibition($event.target.value)"
+      >
+        <option value="0">--Select Exhibition--</option>
+        <option *ngFor="let ex of exhibitions" value="{{ ex.ExhibitionID }}">
+          {{ ex.ExhibitionName }}
+        </option>
+      </select>
+    </div>
+    <br />
+    <!-- <label>Search Exhibtition: </label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search" value="Tropical Fiesta">
+            <div class="input-group-append">
+              <button class="btn btn-outline-success" type="button"><i class="fas fa-search"></i></button>
+            </div>
+          </div> -->
+
+    <br />
+    <br />
+    <button type="button" (click)="showTable()" class="btn btn-primary">
+      Generate Exhibition Report
+    </button>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="table">
+      <table class="table">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">Artist</th>
+            <th scope="col">Artwork Title</th>
+            <th scope="col">Surface Type</th>
+            <th scope="col">Medium Type</th>
+            <th scope="col">Dimmension</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="isShown">
+          <tr *ngFor="let ex of exhibition">
+            <th>{{ ex.Artist }}</th>
+            <td>{{ ex.ArtworkTitle }}</td>
+            <td>{{ ex.SurfaceTypeName }}</td>
+            <td>{{ ex.MediumTypeName }}</td>
+            <td>{{ ex.ArtworkDimensionDescription }}</td>
+            <td>{{ ex.ArtworkPrice }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <button type="button" class="btn btn-primary" style="margin-right: 15px">
+      Export
+    </button>
+    <button type="button" class="btn btn-primary">Print</button>
+  </div>
+</div>

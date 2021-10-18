@@ -1,0 +1,96 @@
+<h1>Welcome, To Johann van Heerdens Art Gallery</h1>
+<hr />
+<div class="welcome">
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="images[0]" alt="Random first slide" />
+      </div>
+      <div class="carousel-caption">
+        <h1>Amazing Art Displays</h1>
+        <p>All the Arts and teachings you can find right here.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="images[1]" alt="Random second slide" />
+      </div>
+      <div class="carousel-caption">
+        <h1>Come, Explore</h1>
+        <p>A part of the journey is discovering new things.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="images[2]" alt="Random third slide" />
+      </div>
+      <div class="carousel-caption">
+        <h1>New Learning Opportunities</h1>
+        <p>A Fast world all for the taking.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  <br />
+  <div class="announce">
+    <h1>Check Announcements Daily!</h1>
+    <video width="420" height="340" class="video">
+      <source src="../../assets/tutorials/bookClass.mp4" type="video/mp4" />
+
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <h2 style="padding-left: 80px">New Events Added</h2>
+  <hr />
+  <div class="event">
+    <div class="row">
+      <div class="col">
+        <h2>{{ latestExhibition.exhibitionName }}</h2>
+        <br />
+        <p style="text-align: left">Exhibition</p>
+        <p style="text-align: left">
+          {{ latestExhibition.exhibitionDescription }}
+        </p>
+        <p style="text-align: left">
+          Coming: {{ latestExhibition.exhibitionStartDateTime | date }}
+        </p>
+      </div>
+      <div class="col">
+        <img
+          class="card-img"
+          src="{{ latestExhibition.exhibitionImage }}"
+          alt="Card image"
+          height="500"
+        />
+      </div>
+    </div>
+  </div>
+  <hr />
+
+  <div class="event">
+    <div class="row">
+      <div class="col">
+        <img
+          class="card-img"
+          src="{{ latestArtClass.artClassImage }}"
+          alt="Card image"
+          height="500"
+        />
+      </div>
+      <div class="col">
+        <h2>{{ latestArtClass.artClassName }}</h2>
+        <br />
+        <p style="text-align: left">Art Class</p>
+        <p style="text-align: left">
+          {{ latestArtClass.artClassDescription }}
+        </p>
+        <p style="text-align: left">
+          Coming: {{ latestArtClass.artClassStartDateTime | date }}
+        </p>
+        <button class="btn btn-outline-primary" style="float: bottom">
+          Learn more
+        </button>
+      </div>
+    </div>
+  </div>
+  <hr />
+</div>

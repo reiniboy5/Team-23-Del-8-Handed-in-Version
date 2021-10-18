@@ -1,0 +1,167 @@
+<div class="container">
+  <div class="row">
+    <h1>Feedback Report</h1>
+  </div>
+  <hr />
+  <div class="row">
+    <label>Select Difficulty Level:</label>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend"></div>
+      <select
+        class="custom-select"
+        id="inputGroupSelect01"
+        [(ngModel)]="selection"
+      >
+        <option *ngFor="let option of options" [value]="option.id">
+          {{ option.text }}
+        </option>
+      </select>
+    </div>
+    <br />
+
+    <br />
+    <br />
+    <br />
+    <button type="button" class="btn btn-primary" (click)="submitRequest()">
+      Generate Feedback Report
+    </button>
+  </div>
+  <hr />
+  <br />
+  <div id="pdf">
+    <div *ngIf="chart" class="reportChart">
+      <canvas id="canvas" style="height: 30%; width: 30%">{{ chart }}</canvas>
+    </div>
+    <div class="mt-5" *ngIf="teachers">
+      <div class="gradeTable">
+        <div *ngFor="let item of teachers">
+          <table class="table table-striped" style="table-layout: fixed">
+            <caption style="text-align: center">
+              <strong>Class Teacher: </strong>
+              {{
+                item.TeacherName
+              }}
+              <br />
+              <i>
+                (Average Rating: {{ item.Average / 100 | percent: "1.2-2" }})</i
+              >
+            </caption>
+            <thead>
+              <br /><br /><br />
+              <tr class="table-primary">
+                <th>Student</th>
+                <th>Feedback</th>
+                <th>Overall Rating</th>
+                <th>Art Class</th>
+              </tr>
+            </thead>
+            <tr *ngFor="let rate of item.Feedbacks">
+              <td>{{ rate.UserFirstName }}</td>
+              <td>{{ rate.Comment }}</td>
+              <td>{{ rate.Rating }}</td>
+              <td>{{ rate.Class }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" style="margin-right: 15px">
+    Export
+  </button>
+  <button type="button" class="btn btn-primary" (click)="download()">
+    Print
+  </button>
+
+  <div class="row">
+    <!-- <div class="table">
+              <table class="table">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">Date</th>
+                      <th scope="col">Difficulty Rating</th>
+                      <th scope="col">Teacher Rating</th>
+                      <th scope="col">Overall Rating</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>2021/06/17</th>
+                      <td>6.7</td>
+                      <td>7.4</td>
+                      <td>7</td>
+
+                    </tr>
+                    <tr>
+                      <th>2021/06/17</th>
+                      <td>5.1</td>
+                      <td>8</td>
+                      <td>9</td>
+                    </tr>
+                    <tr>
+                      <th>2021/06/17</th>
+                      <td>2</td>
+                      <td>7</td>
+                      <td>7.5</td>
+                    </tr>
+                    <tr>
+                      <th>2021/06/17</th>
+                      <td>6</td>
+                      <td>8.4</td>
+                      <td>10</td>
+                    </tr>
+                    <tr>
+                      <th>2021/06/17</th>
+                      <td>3.3</td>
+                      <td>6</td>
+                      <td>7</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div> -->
+    <br />
+  </div>
+</div>
+
+<!-- 
+<div id="pdf">
+<h1>report</h1>
+<div>
+
+<select [(ngModel)]="selection" class="custom-select" id="inputGroupSelect01">
+  <option *ngFor="let option of options" [value]="option.id">{{option.text}}</option>
+</select>
+
+<br><br>
+<button (click)="submitRequest()">Generate</button>
+</div>
+
+<div *ngIf="chart" class="reportChart">
+<canvas id="canvas" style="height: 30%; width: 30%;">{{chart}}</canvas>
+
+</div> 
+<div class="mt-5" *ngIf="teachers">
+<div class="gradeTable">
+  <div *ngFor="let item of teachers">
+    <table class="table table-striped" >
+        <caption ><strong>{{item.TeacherName}}</strong> (Average: {{item.Average/100 | percent : '1.2-2'}})</caption>
+        <thead>
+      <tr class="table-primary">
+        <th>Student</th>
+        <th>Feedback</th>
+        <th>Overall Rating</th>
+      </tr>
+    </thead>
+      <tr *ngFor="let rate of item.Feedbacks">
+        <td>{{rate.UserFirstName}}</td>
+        <td>{{rate.FeedbackComment}}</td>
+        <td>{{rate.Rating}}</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+</div>
+</div>
+<button (click)="download()"></button> -->

@@ -1,0 +1,82 @@
+<div class="page-padding">
+  <br>
+<div class="row">
+  <div class="col">
+    <h1>Tropical Fiesta</h1>
+  </div>
+  <div class="col">
+    <button
+      mdbBtn
+      type="button"
+      gradient="peach"
+      rounded="true"
+      style="float: right"
+      [routerLink]="['../artist-exhibitions']"
+      mdbWavesEffect
+    >
+      Back
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <img
+      class="card-img-top"
+      src="../../../assets/exhibitions/exhibition1.png"
+      alt="Card image cap"
+    />
+  </div>
+
+  <div class="col-8">
+    <p>This exhibition provides an exquisite experience allowing artists to unleash a fruitful image of their inner imagination.
+    </p>
+
+    <hr>
+    <p>Date: 15 May 2020 - 20 May 2020</p>
+    <P>Time: 08:00 - 16:00</P>
+    <p>Venue: Johann Van Heerden Art Gallery - 593 Jaqueline Drive Garsfontein Pretoria East</p>
+    <hr>
+    <button
+      mdbBtn
+      type="button"
+      gradient="purple"
+      rounded="true"
+      mdbWavesEffect
+      [routerLink]="['../apply-exhibition']"
+    >
+      Apply For Exhibition
+    </button>
+  </div>
+</div>
+
+<!-- ==================================================================================== -->
+<!-- =====================================================MODALS BELOW============================================ -->
+<ng-template #bookModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Confirm Registration</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are sure you are happy with your registration details></p>
+  </div>
+  <div class="modal-footer">
+    <button
+      mdbBtn
+      type="button"
+      gradient="purple"
+      (click)="submitBooking(bookModal)"
+      rounded="true"
+      mdbWavesEffect
+    >
+      Confirm
+    </button>
+  </div>
+</ng-template>
+</div>

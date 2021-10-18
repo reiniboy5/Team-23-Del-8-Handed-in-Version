@@ -1,0 +1,568 @@
+<div class="container">
+  <div class="row">
+    <h1>Artworks</h1>
+  </div>
+  <hr />
+  <br />
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="addArtwork(addArtworkModal)"
+  >
+    Add Artwork <i class="fas fa-plus"></i>
+  </button>
+  <br />
+  <br />
+  <div class="card-deck">
+    <div class="col-4" *ngFor="let item of artworkService.artworkList">
+      <div class="card">
+        <img src="{{ item.artworkImage }}" class="artwork-image" alt="..." />
+        <div class="card-body">
+          <h2 class="card-title">{{ item.artworkTitle }}</h2>
+          <p class="card-text">
+            <li>Medium: {{ item.mediumType.mediumTypeName }}</li>
+            <li>Surface: {{ item.surfaceType.surfaceTypeName }}</li>
+            <li>
+              Dimensions:
+              {{ item.artworkDimension.artworkDimensionDescription }}
+            </li>
+            <li>Price: R {{ item.artworkPrice }}.00</li>
+          </p>
+          <p class="card-text"><small class="text-muted">By Admin</small></p>
+          <br />
+        </div>
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="onEdit(updateArtworkModal, item)"
+        >
+          Update <i class="fas fa-edit"></i>
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="onDeleteArtwork(deleteArtworkModal)"
+        >
+          Delete <i class="fas fa-trash"></i>
+        </button>
+
+        <ng-template #deleteArtworkModal let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title">Delete Artwork</h4>
+            <button
+              type="button"
+              class="close"
+              aria-label="Close"
+              (click)="modal.dismiss('Cross click')"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete this Artwork?</p>
+          </div>
+          <br />
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="modal.dismiss('Cross click')"
+            >
+              No
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="confirmDeleteArtwork(item.artworkID)"
+            >
+              Yes
+            </button>
+          </div>
+        </ng-template>
+        <br />
+      </div>
+      <br />
+    </div>
+  </div>
+
+  <!-- =================================================================================== -->
+  <!-- ========================MODAL BELOW ===================================================================== -->
+
+  <ng-template #addArtworkModal let-modal>
+    <form [formGroup]="addArtworkForm" (ngSubmit)="onAddSubmit()">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Artwork</h4>
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="modal.dismiss('Cross click')"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Artwork Title:</label>
+        <input
+          type="text"
+          class="form-control"
+          style="width: 250px"
+          placeholder="Artwork Title"
+          name="artworkTitle"
+          formControlName="artworkTitle"
+        />
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.artworkTitle">
+            <div
+              *ngIf="
+                addArtworkForm.get('artworkTitle').hasError(value.type) &&
+                (addArtworkForm.get('artworkTitle').dirty ||
+                  addArtworkForm.get('artworkTitle').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="addArtworkForm.get('artworkTitle').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+        <label>Medium Type:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            name="mediumTypeID"
+            formControlName="mediumTypeID"
+          >
+            <option
+              *ngFor="let type of mediumTypeList"
+              [value]="type.mediumTypeID"
+            >
+              {{ type.mediumTypeName }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.mediumTypeID">
+            <div
+              *ngIf="
+                addArtworkForm.get('mediumTypeID').hasError(value.type) &&
+                (addArtworkForm.get('mediumTypeID').dirty ||
+                  addArtworkForm.get('mediumTypeID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="addArtworkForm.get('mediumTypeID').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Surface Type:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            name="surfaceTypeID"
+            formControlName="surfaceTypeID"
+          >
+            <option
+              *ngFor="let type of surfaceTypeList"
+              [value]="type.surfaceTypeID"
+            >
+              {{ type.surfaceTypeName }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.surfaceTypeID">
+            <div
+              *ngIf="
+                addArtworkForm.get('surfaceTypeID').hasError(value.type) &&
+                (addArtworkForm.get('surfaceTypeID').dirty ||
+                  addArtworkForm.get('surfaceTypeID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="addArtworkForm.get('surfaceTypeID').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+        <label>Dimensions:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            name="artworkDimensionID"
+            formControlName="artworkDimensionID"
+          >
+            <option
+              *ngFor="let type of dimensionsList"
+              [value]="type.artworkDimensionID"
+            >
+              {{ type.artworkDimensionDescription }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container
+            *ngFor="let value of validation_message.artworkDimensionID"
+          >
+            <div
+              *ngIf="
+                addArtworkForm.get('artworkDimensionID').hasError(value.type) &&
+                (addArtworkForm.get('artworkDimensionID').dirty ||
+                  addArtworkForm.get('artworkDimensionID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="addArtworkForm.get('artworkDimensionID').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Price:</label>
+        <input
+          type="text"
+          class="form-control"
+          style="width: 250px"
+          placeholder="R 0.00"
+          name="artworkPrice"
+          formControlName="artworkPrice"
+        />
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.artworkPrice">
+            <div
+              *ngIf="
+                addArtworkForm.get('artworkPrice').hasError(value.type) &&
+                (addArtworkForm.get('artworkPrice').dirty ||
+                  addArtworkForm.get('artworkPrice').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="addArtworkForm.get('artworkPrice').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+        <h4>Add Class Picture</h4>
+
+        <div class="row">
+          <label>Add Picture: </label>
+          <input
+            type="hidden"
+            name="artworkImage"
+            formControlName="artworkImage"
+            [value]="base64"
+          />
+          <!-- <button type="button" class="btn btn-outline-primary" (click)="onCheck()">Check</button> -->
+          <input
+            type="file"
+            accept="image/*"
+            (change)="onSelectNewFile($event.target?.files)"
+          />
+          <!-- <img [src]=this.service.driverData.driverImage alt="Driver Image" width="350px" height="250px"> -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="modal.dismiss('Cross click')"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          [disabled]="addArtworkForm.invalid"
+          type="submit"
+        >
+          Save Changes
+        </button>
+      </div>
+    </form>
+  </ng-template>
+
+  <!-- (click)="confirmArtwork(addArtworkModal)" -->
+  <!-- (click)="addArtwork(addArtworkModal)" -->
+
+  <ng-template #updateArtworkModal let-modal>
+    <form [formGroup]="updateArtworkForm" (ngSubmit)="onUpdateSubmit()">
+      <div class="modal-header">
+        <h4 class="modal-title">Update Artwork</h4>
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="modal.dismiss('Cross click')"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Artwork Title:</label>
+        <input
+          type="text"
+          class="form-control"
+          style="width: 250px"
+          placeholder="Artwork Title"
+          name="artworkTitle"
+          formControlName="artworkTitle"
+        />
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.artworkTitle">
+            <div
+              *ngIf="
+                updateArtworkForm.get('artworkTitle').hasError(value.type) &&
+                (updateArtworkForm.get('artworkTitle').dirty ||
+                  updateArtworkForm.get('artworkTitle').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="updateArtworkForm.get('artworkTitle').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+        <label>Medium Type:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            name="mediumTypeID"
+            formControlName="mediumTypeID"
+          >
+            <option
+              *ngFor="let type of mediumTypeList"
+              [value]="type.mediumTypeID"
+            >
+              {{ type.mediumTypeName }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.mediumTypeID">
+            <div
+              *ngIf="
+                updateArtworkForm.get('mediumTypeID').hasError(value.type) &&
+                (updateArtworkForm.get('mediumTypeID').dirty ||
+                  updateArtworkForm.get('mediumTypeID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="updateArtworkForm.get('mediumTypeID').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Surface Type:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            name="surfaceTypeID"
+            formControlName="surfaceTypeID"
+          >
+            <option
+              *ngFor="let type of surfaceTypeList"
+              [value]="type.surfaceTypeID"
+            >
+              {{ type.surfaceTypeName }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.surfaceTypeID">
+            <div
+              *ngIf="
+                updateArtworkForm.get('surfaceTypeID').hasError(value.type) &&
+                (updateArtworkForm.get('surfaceTypeID').dirty ||
+                  updateArtworkForm.get('surfaceTypeID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="updateArtworkForm.get('surfaceTypeID').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+        <label>Dimensions:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            name="artworkDimensionID"
+            formControlName="artworkDimensionID"
+          >
+            <option
+              *ngFor="let type of dimensionsList"
+              [value]="type.artworkDimensionID"
+            >
+              {{ type.artworkDimensionDescription }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container
+            *ngFor="let value of validation_message.artworkDimensionID"
+          >
+            <div
+              *ngIf="
+                updateArtworkForm
+                  .get('artworkDimensionID')
+                  .hasError(value.type) &&
+                (updateArtworkForm.get('artworkDimensionID').dirty ||
+                  updateArtworkForm.get('artworkDimensionID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="updateArtworkForm.get('artworkDimensionID').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Price:</label>
+        <input
+          type="text"
+          class="form-control"
+          style="width: 250px"
+          placeholder="R 0.00"
+          name="artworkPrice"
+          formControlName="artworkPrice"
+        />
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.artworkPrice">
+            <div
+              *ngIf="
+                updateArtworkForm.get('artworkPrice').hasError(value.type) &&
+                (updateArtworkForm.get('artworkPrice').dirty ||
+                  updateArtworkForm.get('artworkPrice').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="updateArtworkForm.get('artworkPrice').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+        <h4>Add Class Picture</h4>
+
+        <div class="row">
+          <label>Add Picture: </label>
+          <input
+            type="hidden"
+            name="artworkImage"
+            formControlName="artworkImage"
+            [value]="base64"
+          />
+          <!-- <button type="button" class="btn btn-outline-primary" (click)="onCheck()">Check</button> -->
+          <input
+            type="file"
+            accept="image/*"
+            (change)="onSelectNewFile($event.target?.files)"
+          />
+          <!-- <img [src]=this.service.driverData.driverImage alt="Driver Image" width="350px" height="250px"> -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="modal.dismiss('Cross click')"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          [disabled]="updateArtworkForm.invalid"
+          type="submit"
+        >
+          Save Changes
+        </button>
+      </div>
+    </form>
+  </ng-template>
+
+  <!-- =========MODALS BELOW======================= -->
+
+  <!-- <ng-template #deleteArtworkModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Delete Artwork</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+    <p>Are you sure you want to delete this Artwork?</p>
+    </div>
+    <br>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">No</button>
+    <button type="button" class="btn btn-primary" (click)="confirmDeleteArtwork()">Yes</button>
+  </div>
+</ng-template> -->
+
+  <!-- =========MODALS BELOW======================= -->
+  <!-- 
+<ng-template #confirmModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Confirm New Artwork</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+    <p>Are you sure you want to add this Artwork?</p>
+    </div>
+    <br>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">No</button>
+    <button type="button" class="btn btn-primary" (click)="onYes(deleteArtworkModal)">Yes</button>
+  </div>
+</ng-template> -->
+</div>
+<br />

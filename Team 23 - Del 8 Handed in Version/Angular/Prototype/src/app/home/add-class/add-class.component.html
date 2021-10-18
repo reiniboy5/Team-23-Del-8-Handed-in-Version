@@ -1,0 +1,160 @@
+<form [formGroup]="addArtClassForm" (ngSubmit)="onSubmit($event)">
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col" style="background-color: black;">
+                <img src="../assets/logo/artech.png" class="logo" alt="user">
+            </div>
+
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <h3>Artclass</h3>
+                    </div>
+                    <div class="col">
+                        <button mdbBtn type="button" gradient="peach" (click)="cancelAddClass(cancelAddClassArtModal)"
+                            style="float: right" rounded="true" mdbWavesEffect>Back</button>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col">
+                        <label>ArtClass Name</label>
+                        <input type="text" formControlName="ArtClassName" class="form-control" style="width: 250px;"
+                            placeholder="Enter Name">
+                    </div>
+                    <div class="col">
+                        <label>ArtClass Description  </label>
+                            <input type="text" formControlName="ArtClassDescription" class="form-control"
+                                style="width: 250px;" placeholder="Enter Description">
+                    </div>
+                </div>
+                <br>
+
+
+                <div class="row">
+                    <div class="col">
+                        <label>ArtClass StartDate</label>
+                        <input type="email" formControlName="ArtClassStartDate" class="form-control"
+                            style="width: 250px;" placeholder="E-mail">
+                    </div>
+                    <div class="col">
+                        <label>ArtClass EndDate</label>
+                        <input type="text" formControlName="ArtClassEndDate" class="form-control" style="width: 250px;"
+                            placeholder="Username">
+                    </div>
+                    <div class="col">
+                        <label>ArtClass StartTime</label>
+                        <input type="email" formControlName="ArtClassStartTime" class="form-control"
+                            style="width: 250px;" placeholder="E-mail">
+                    </div>
+                    <div class="col">
+                        <label>ArtClass EndTime</label>
+                        <input type="text" formControlName="ArtClassEndTime" class="form-control" style="width: 250px;"
+                            placeholder="Username">
+                    </div>
+                    <!--       <div class="col">
+                <label>User Date Of Birth</label>
+                <mat-form-field>
+                  <input matInput [matDatepicker]="picker" ng-model-options="{ timezone: 'GMT' }" formControlName="UserDOB"
+                    placeholder="Choose a date">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div> -->
+                </div>
+                <br>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <div>
+                            <label>Class Limit</label>
+                            <input type="text" formControlName="ClassLimit" class="form-control" style="width: 250px;"
+                                placeholder="0">
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div>
+                            <label>RefundDayLimit</label>
+                            <input type="text" formControlName="RefundDayLimit" class="form-control"
+                                style="width: 250px;" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+
+                <div class="row">
+                    <div class="col">
+                        <label>Class Price</label>
+                        <input type="text" formControlName="ClassPrice" class="form-control" style="width: 250px;"
+                            placeholder="Artist Bio">
+                    </div>
+                    <div class="col">
+                        <label>Art Class Type</label>
+                        <input type="text" formControlName="ArtClassType" class="form-control" style="width: 250px;"
+                            placeholder="Class Type">
+                    </div>
+                    <div class="col">
+                        <label>Venue</label>
+                        <input type="text" formControlName="Venue" class="form-control" style="width: 250px;"
+                            placeholder="Venue">
+                    </div>
+                    <div class="col">
+                        <label>Class Teacher</label>
+                        <input type="text" formControlName="ClassTeacher" class="form-control" style="width: 250px;"
+                            placeholder="Class Teacher">
+                    </div>
+                    <div class="col">
+                        <label>Announcement</label>
+                        <input type="text" formControlName="ArtClassAnnouncement" class="form-control" style="width: 250px;"
+                            placeholder="ArtClassAnnouncement">
+                    </div>
+
+                    <div class="col">
+                        <label>Organisation</label>
+                        <input type="text" formControlName="Organisation" class="form-control" style="width: 250px;"
+                            placeholder="Organisation">
+                    </div>
+
+                </div>
+                <br>
+
+
+
+                <button mdbBtn type="submit" (click)="onSubmit($event)" gradient="blue" rounded="true"
+                    mdbWavesEffect>Add Class</button>
+                <!--<button mdbBtn type="button" gradient="purple" [routerLink]="['/register-artist']"  rounded="true" mdbWavesEffect>Next</button> -->
+
+            </div>
+        </div>
+
+
+
+        <!-- ============================================================================ -->
+        <!-- ===============MODALS BELOW========================================================================================================== -->
+
+
+        <ng-template #cancelAddClassArtModal let-modal>
+            <div class="modal-header">
+                <h4 class="modal-title">Cancel Addin Class</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to cancel the add class process?</p>
+            </div>
+            <div class="modal-footer">
+                <button mdbBtn type="button" gradient="peach" (click)="modal.dismiss('Cross click')" rounded="true"
+                    mdbWavesEffect>No</button>
+                <button mdbBtn type="button" gradient="purple" (click)="yesCancel(cancelAddClassArtModal)"
+                    rounded="true" mdbWavesEffect>Yes</button>
+            </div>
+        </ng-template>
+    </div>
+</form>

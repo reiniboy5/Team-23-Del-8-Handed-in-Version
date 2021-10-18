@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <h1>New User Report</h1>
+  </div>
+  <hr />
+  <form [formGroup]="dateForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="row">
+      <label>Start-Date: <i class="far fa-calendar"></i></label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend"></div>
+        <input
+          type="date"
+          formControlName="startdate"
+          placeholder="From Date"
+          class="form-control"
+          required
+        />
+      </div>
+      <br />
+      <label>End-Date: <i class="far fa-calendar"></i></label>
+      <div class="input-group mb-3">
+        <input
+          type="date"
+          formControlName="enddate"
+          placeholder="To Date"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        Generate New User Report
+      </button>
+    </div>
+  </form>
+
+  <hr />
+  <div class="row">
+    <div class="table">
+      <table class="table">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Username</th>
+            <th scope="col">User Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let detail of details">
+            <td>{{ detail.UserFirstName }}</td>
+            <td>{{ detail.UserLastName }}</td>
+            <td>{{ detail.UserEmail }}</td>
+            <td>{{ detail.UserName }}</td>
+            <td>{{ detail.UserRoleName }}</td>
+          </tr>
+          <!-- <tr *ngIf="emp.length==0">  
+                      <td colspan="4">  
+                          No Users Found  
+                      </td>  
+                    </tr> -->
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <button type="button" class="btn btn-primary" style="margin-right: 15px">
+      Export
+    </button>
+    <button type="button" class="btn btn-primary">Print</button>
+  </div>
+</div>

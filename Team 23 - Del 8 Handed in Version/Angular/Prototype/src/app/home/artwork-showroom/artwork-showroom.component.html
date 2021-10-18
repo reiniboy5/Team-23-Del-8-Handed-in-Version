@@ -1,0 +1,123 @@
+<div class="page-padding">
+  <br />
+  <div class="container">
+    <img
+      src="../../../assets/art-class/art-class-poster.png"
+      alt=""
+      style="width: 900px; height: 300px"
+    />
+    <div class="top-right"><h1>Artworks Showroom</h1></div>
+  </div>
+  <button
+    mdbBtn
+    gradient="blue"
+    rounded="true"
+    mdbWavesEffect
+    (click)="onHint(hintModal)"
+  >
+    Hint <i class="far fa-paper-plane"></i>
+  </button>
+  <hr />
+
+  <ng-container *ngIf="show">
+    <ng-container *ngIf="allart">
+      <button
+        mdbBtn
+        type="button"
+        gradient="purple"
+        rounded="true"
+        mdbWavesEffect
+        (click)="getMyArtwork()"
+        mdbWavesEffect
+      >
+        View My Artwork Only
+      </button>
+    </ng-container>
+
+    <ng-container *ngIf="!allart">
+      <button
+        mdbBtn
+        type="button"
+        gradient="purple"
+        rounded="true"
+        mdbWavesEffect
+        (click)="ngOnInit()"
+        mdbWavesEffect
+      >
+        View All Artwork
+      </button>
+    </ng-container>
+    <ng-container>
+      <div style="float: right">
+        <button
+          mdbBtn
+          type="button"
+          gradient="purple"
+          rounded="true"
+          mdbWavesEffect
+          (click)="addArtwork()"
+          mdbWavesEffect
+        >
+          Add Artwork
+        </button>
+      </div>
+    </ng-container>
+  </ng-container>
+  <hr />
+
+  <div class="card-deck" style="width: auto">
+    <div
+      class="col-4"
+      *ngFor="let artwork of listArtwork; let indexofElementc = index"
+    >
+      <div class="card">
+        <img src="{{ artwork.artworkImage }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h3 class="card-title">{{ artwork.artworkTitle }}</h3>
+          <p class="card-text">
+            <li>Medium: {{ artwork.mediumType.mediumTypeName }}</li>
+            <li>Surface: {{ artwork.surfaceType.surfaceTypeName }}</li>
+            <li>
+              Dimensions:
+              {{ artwork.artworkDimension.artworkDimensionDescription }}
+            </li>
+            <li>Price: {{ artwork.artworkPrice }}</li>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #hintModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Hint</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>
+      You can toggle between viewing my artwork and viewing all artwork. You can
+      add your own artwork if you are a ARTIST.
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button
+      mdbBtn
+      type="button"
+      gradient="purple"
+      (click)="confirmRefund(requestRefundModal)"
+      rounded="true"
+      mdbWavesEffect
+      (click)="modal.dismiss('Cross click')"
+    >
+      OK
+    </button>
+  </div>
+</ng-template>

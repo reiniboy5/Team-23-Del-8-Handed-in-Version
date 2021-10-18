@@ -1,0 +1,96 @@
+<!--
+
+<div class="page-padding">
+    <div class="row">
+        <h1>Tags</h1>
+    </div>
+    <hr>
+    <div class="row">
+        <button type="button" style="width: 200px" class="btn btn-secondary" (click)="addTag(addTagModal)">Add Tag <i class="fas fa-plus"></i></button>
+    </div>
+</div>
+
+<table class="table table-bordered" style="width: 800px;">
+    <thead>
+        <tr style="text-align: center;">
+            <th colspan="2">Artist Name</th>
+          </tr>
+          <tr style="text-align: center;">
+            <th colspan="2">Johann van Heerden Gallery</th>
+          </tr>
+      <tr>
+        <th scope="col">Title</th>
+        <td Style="text-align: center;">Little Things</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Medium</th>
+        <td Style="text-align: center;">Pencil Drawing</td>
+      </tr>
+      <tr>
+        <th scope="row">Size</th>
+        <td Style="text-align: center;">12000mm x 900mm</td>
+      </tr>
+      <tr>
+        <th scope="row">Price</th>
+        <td Style="text-align: center;">R 1000.00</td>
+      </tr>
+      <tr style="text-align: center;">
+        <th colspan="2">
+            <button mdbBtn type="button" gradient="peach" rounded="true" mdbWavesEffect (click)="deleteTag(deleteTagModal)">Delete Tag</button>
+             <button mdbBtn type="button" gradient="aqua" rounded="true" mdbWavesEffect (click)="addTag(addTagModal)">Edit Tag</button> 
+
+        </th>
+      </tr>
+    </tbody>
+  </table>
+-->
+<!-- =================================================================================== -->
+<!-- ========================MODAL BELOW ===================================================================== 
+
+<ng-template #addTagModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Enter Tag Details</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <label>Title:</label>
+        <input type="text" class="form-control" placeholder="Artwork Title">
+        <br>
+        <label>Medium:</label>
+        <input type="text" class="form-control" placeholder="Medium type">
+        <br>
+        <label>Dimmensions</label>
+        <input type="text" class="form-control"  placeholder="mm x mm">
+        <br>
+        <label>Price:</label>
+        <input type="text" class="form-control"  placeholder="R 0.00">
+        <br>
+        </div>
+    <div class="modal-footer">
+      <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right;" (click)="modal.dismiss('Cross click')" mdbWavesEffect>Cancel</button>
+      <button mdbBtn type="button" gradient="purple" (click)="confirmTag(addTagModal)" rounded="true" mdbWavesEffect>Save</button>
+    </div>
+  </ng-template>
+
+
+  <ng-template #deleteTagModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Delete Tag</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+<p>Are you sure you want to delete this tag?</p>
+        </div>
+    <div class="modal-footer">
+      <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right;" (click)="modal.dismiss('Cross click')"  mdbWavesEffect>No</button>
+      <button mdbBtn type="button" gradient="purple" (click)="confirmDeleteTag(deleteTagModal)" rounded="true" mdbWavesEffect>Yes</button>
+    </div>
+  </ng-template>
+
+-->

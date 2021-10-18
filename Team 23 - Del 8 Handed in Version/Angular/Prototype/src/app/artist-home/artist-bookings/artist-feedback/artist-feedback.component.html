@@ -1,0 +1,68 @@
+<div class="feedbackForm">
+    <div class="row">
+        <div class="col">
+        <h2>Feedback:</h2>
+    </div>
+    <div class="col">
+        <button mdbBtn type="button" gradient="peach" (click)="cancelFeedback(cancelfeedbackModal)"  style="float: right" rounded="true" mdbWavesEffect>Back</button>
+    </div>
+    </div>
+    <hr>
+    
+    <label>Teacher Rating</label>
+    <input type="number" class="form-control" style="width: 250px;" placeholder="">
+    
+    <label>Difficulty Rating</label>
+    <input type="number" class="form-control" style="width: 250px;" placeholder="">
+    
+    <label>Overall Rating</label>
+    <input type="number" class="form-control" style="width: 250px;" placeholder="">
+    
+    <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="5" id="comment"></textarea>
+      </div>
+    <br>
+    <button mdbBtn type="button" gradient="blue" (click)="onSubmitFeedback(feedbackModal)" rounded="true" mdbWavesEffect>Submit Feedback</button>
+    <br>
+    <br>
+    <br>
+    </div>
+    
+    
+    <!-- ======================================================================================= -->
+    <!-- ==============================MODAL BELOW==================================================== -->
+    
+    <ng-template #feedbackModal let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Confirm Feedback Form</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to submit your feedback from?</p>
+        </div>
+        <div class="modal-footer">
+          <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right;" (click)="modal.dismiss('Cross click')"  mdbWavesEffect>No</button>
+          <button mdbBtn type="button" gradient="purple" (click)="confirmFeedback(feedbackModal)" rounded="true" mdbWavesEffect>Confirm</button>
+        </div>
+      </ng-template>
+
+
+      <ng-template #cancelfeedbackModal let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Cancel Feedback Form</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to cancel the feedback process?</p>
+        </div>
+        <div class="modal-footer">
+          <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right;" (click)="modal.dismiss('Cross click')"  mdbWavesEffect>No</button>
+          <button mdbBtn type="button" gradient="purple" (click)="confirmCancelFeedback(cancelfeedbackModal)" rounded="true" mdbWavesEffect>Yes</button>
+        </div>
+      </ng-template>
+    

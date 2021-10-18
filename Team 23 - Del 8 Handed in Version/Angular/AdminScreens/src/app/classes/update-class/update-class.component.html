@@ -1,0 +1,537 @@
+<div class="container">
+  <form [formGroup]="artClassForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col">
+        <h1>Update Art Class</h1>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-danger"
+          style="float: right"
+          (click)="onCancel(cancelModal)"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+    <h3 [hidden]="!artClassForm.invalid">
+      *Update Button is disbaled, please enter all input values
+    </h3>
+    <hr />
+    <div class="row">
+      <div class="col">
+        <label>Title:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Title"
+          name="artClassName"
+          formControlName="artClassName"
+        />
+        <!-- <div *ngIf="artClassName.invalid && (artClassName.dirty || artClassName.touched)" style="color: red;">
+              Class Title Required
+            </div>  -->
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.artClassName">
+            <div
+              *ngIf="
+                artClassForm.get('artClassName').hasError(value.type) &&
+                (artClassForm.get('artClassName').dirty ||
+                  artClassForm.get('artClassName').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="artClassForm.get('artClassName').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <div class="form-group">
+          <label for="comment">Class Description:</label>
+          <textarea
+            class="form-control"
+            rows="5"
+            id="comment"
+            name="artClassDescription"
+            formControlName="artClassDescription"
+          ></textarea>
+        </div>
+        <!-- <div *ngIf="artClassDescription.invalid && (artClassDescription.dirty || artClassDescription.touched)" style="color: red;">
+                Description Required
+              </div>  -->
+        <div class="validation-message">
+          <ng-container
+            *ngFor="let value of validation_message.artClassDescription"
+          >
+            <div
+              *ngIf="
+                artClassForm.get('artClassDescription').hasError(value.type) &&
+                (artClassForm.get('artClassDescription').dirty ||
+                  artClassForm.get('artClassDescription').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="artClassForm.get('artClassDescription').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+
+        <br />
+
+        <label>Start-Date:</label>
+        <input
+          type="datetime-local"
+          class="form-control"
+          placeholder="Start-Date"
+          name="artClassStartDateTime"
+          formControlName="artClassStartDateTime"
+        />
+        <!-- <div *ngIf="artClassStartDate.invalid && (artClassStartDate.dirty || artClassStartDate.touched)" style="color: red;">
+              Start Date Required
+            </div>  -->
+        <div class="validation-message">
+          <ng-container
+            *ngFor="let value of validation_message.artClassStartDateTime"
+          >
+            <div
+              *ngIf="
+                artClassForm
+                  .get('artClassStartDateTime')
+                  .hasError(value.type) &&
+                (artClassForm.get('artClassStartDateTime').dirty ||
+                  artClassForm.get('artClassStartDateTime').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="artClassForm.get('artClassStartDateTime').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>End-Date:</label>
+        <input
+          type="datetime-local"
+          class="form-control"
+          placeholder="End-Date"
+          name="artClassEndDateTime"
+          formControlName="artClassEndDateTime"
+        />
+        <!-- <div *ngIf="artClassEndDate.invalid && (artClassEndDate.dirty || artClassEndDate.touched)" style="color: red;">
+              End Date Required
+            </div>  -->
+        <div class="validation-message">
+          <ng-container
+            *ngFor="let value of validation_message.artClassEndDateTime"
+          >
+            <div
+              *ngIf="
+                artClassForm.get('artClassEndDateTime').hasError(value.type) &&
+                (artClassForm.get('artClassEndDateTime').dirty ||
+                  artClassForm.get('artClassEndDateTime').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="artClassForm.get('artClassEndDateTime').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Class Type:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            name="artClassTypeID"
+            formControlName="artClassTypeID"
+          >
+            <option
+              *ngFor="let type of artClassTypeList"
+              [value]="type.artClassTypeID"
+            >
+              {{ type.artClassTypeDescription }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.artClassTypeID">
+            <div
+              *ngIf="
+                artClassForm.get('artClassTypeID').hasError(value.type) &&
+                (artClassForm.get('artClassTypeID').dirty ||
+                  artClassForm.get('artClassTypeID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="artClassForm.get('artClassTypeID').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+      </div>
+      <div class="col">
+        <label>Teacher:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            name="classTeacherID"
+            formControlName="classTeacherID"
+          >
+            <option
+              *ngFor="let type of teachersList"
+              [value]="type.classTeacherID"
+            >
+              {{ type.teacherName }} {{ type.teacherSurname }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.classTeacherID">
+            <div
+              *ngIf="
+                artClassForm.get('classTeacherID').hasError(value.type) &&
+                (artClassForm.get('classTeacherID').dirty ||
+                  artClassForm.get('classTeacherID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="artClassForm.get('classTeacherID').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Class limit: </label>
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Provide class limit"
+          name="classLimit"
+          formControlName="classLimit"
+        />
+        <!-- <div *ngIf="artClassLimit.invalid && (artClassLimit.dirty || artClassLimit.touched)" style="color: red;">
+              Class Limit Required
+            </div>  -->
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.classLimit">
+            <div
+              *ngIf="
+                artClassForm.get('classLimit').hasError(value.type) &&
+                (artClassForm.get('classLimit').dirty ||
+                  artClassForm.get('classLimit').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="artClassForm.get('classLimit').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Refund Limit:</label>
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Refund limit"
+          name="refundDayLimit"
+          formControlName="refundDayLimit"
+        />
+        <!-- <div *ngIf="refundDayLimit.invalid && (refundDayLimit.dirty || refundDayLimit.touched)" style="color: red;">
+              Refund Limit Required
+            </div>  -->
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.refundDayLimit">
+            <div
+              *ngIf="
+                artClassForm.get('refundDayLimit').hasError(value.type) &&
+                (artClassForm.get('refundDayLimit').dirty ||
+                  artClassForm.get('refundDayLimit').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="artClassForm.get('refundDayLimit').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Class Price:</label>
+        <input
+          type="number"
+          class="form-control"
+          placeholder="0.00"
+          name="classPrice"
+          formControlName="classPrice"
+        />
+        <!-- <div *ngIf="refundDayLimit.invalid && (refundDayLimit.dirty || refundDayLimit.touched)" style="color: red;">
+              Refund Limit Required
+            </div>  -->
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.classPrice">
+            <div
+              *ngIf="
+                artClassForm.get('classPrice').hasError(value.type) &&
+                (artClassForm.get('classPrice').dirty ||
+                  artClassForm.get('classPrice').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="artClassForm.get('classPrice').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Venue:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            name="venueID"
+            formControlName="venueID"
+          >
+            <option *ngFor="let type of venueList" [value]="type.venueID">
+              {{ type.venueDescription }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.venueID">
+            <div
+              *ngIf="
+                artClassForm.get('venueID').hasError(value.type) &&
+                (artClassForm.get('venueID').dirty ||
+                  artClassForm.get('venueID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="artClassForm.get('venueID').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Organisation:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            formControlName="organisationID"
+            name="organisationID"
+          >
+            <option
+              *ngFor="let type of organisationList"
+              [value]="type.organisationID"
+            >
+              {{ type.organisationalName }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.organisationID">
+            <div
+              *ngIf="
+                artClassForm.get('organisationID').hasError(value.type) &&
+                (artClassForm.get('organisationID').dirty ||
+                  artClassForm.get('organisationID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="artClassForm.get('organisationID').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+        <!-- 
+              <label>Payment Reminder: (Set how many weeks before start-date)</label>
+              <div class="row" style="margin-left: 50px;">
+              <div class="col">
+                <input class="form-check-input" type="radio">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  3 Weeks
+                </label>
+              </div>
+              <div class="col">
+                <input class="form-check-input" type="radio">
+                <label class="form-check-label">
+                  2 Weeks
+                </label>
+              </div>
+              <div class="col">
+                <input class="form-check-input" type="radio">
+                <label class="form-check-label">
+                  1 Week
+                </label>
+              </div>
+            </div>
+              <br>
+              <label>Class Reminder: (Set how many weeks before start-date)</label>
+              <div class="row" style="margin-left: 50px;">
+              <div class="col">
+                <input class="form-check-input" type="radio">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  3 Weeks
+                </label>
+              </div>
+              <div class="col">
+                <input class="form-check-input" type="radio">
+                <label class="form-check-label">
+                  2 Weeks
+                </label>
+              </div>
+              <div class="col">
+                <input class="form-check-input" type="radio">
+                <label class="form-check-label">
+                  1 Week
+                </label>
+              </div>
+            </div> -->
+        <hr />
+        <h4>Add Class Picture</h4>
+        <div class="row">
+          <div class="col">
+            <label>Add Picture: </label>
+            <input
+              type="hidden"
+              name="artClassImage"
+              formControlName="artClassImage"
+              [value]="base64"
+            />
+            <!-- <button type="button" class="btn btn-outline-primary" (click)="onCheck()">Check</button> -->
+            <input
+              type="file"
+              accept="image/*"
+              (change)="onSelectNewFile($event.target?.files)"
+            />
+          </div>
+          <div class="col">
+            <img [src]="this.base64" class="artClass-image" alt="artClass" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!-- <button type="button" class="btn btn-primary btn-lg" (click)="addClass(announcementModal)">Submit</button> -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      style="width: 250px; height: 50px"
+      [disabled]="artClassForm.invalid"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+
+<!-- =========MODALS BELOW======================= -->
+
+<ng-template #updateClassModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Enter Announcement</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Announcement</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="5"
+      ></textarea>
+    </div>
+  </div>
+  <br />
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.dismiss('Cross click')"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="confirmUpdateClass()"
+    >
+      Confirm
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #cancelModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Cancel Update Class</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to cancel the update process?</p>
+  </div>
+  <br />
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.dismiss('Cross click')"
+    >
+      No
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="confirmCancel(cancelModal)"
+    >
+      Yes
+    </button>
+  </div>
+</ng-template>

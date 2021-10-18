@@ -1,0 +1,171 @@
+<nav
+  class="navbar justify-content-between"
+  style="background-color: rgba(128, 128, 128, 0.445)"
+>
+  <a class="navbar-brand" style="color: rgb(0, 195, 255)">Artech Systems</a>
+  <form class="form-inline">
+    <a class="navbar-brand">Admin</a>
+
+    <mat-list-item role="listitem" class="sideNavButton">
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        type="button"
+        [matMenuTriggerFor]="profileMenu"
+      >
+        <i class="fas fa-user-alt"></i>
+      </button>
+      <mat-menu #profileMenu="matMenu" xPosition="after">
+        <button mat-button style="width: 100%">Profile</button>
+        <button mat-button style="width: 100%" (click)="onLogout(logoutModal)">
+          Log Out
+        </button>
+      </mat-menu>
+    </mat-list-item>
+  </form>
+</nav>
+
+<!-- ============================================================================ -->
+<!-- ===============MODALS BELOW========================================================================================================== -->
+
+<ng-template #logoutModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Logout</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to Logout?</p>
+  </div>
+  <div class="modal-footer">
+    <button
+      mdbBtn
+      type="button"
+      gradient="peach"
+      (click)="modal.dismiss('Cross click')"
+      mdbWavesEffect
+    >
+      No
+    </button>
+    <button
+      mdbBtn
+      type="button"
+      gradient="purple"
+      (click)="yesLogout(logoutModal)"
+      mdbWavesEffect
+    >
+      Yes
+    </button>
+  </div>
+</ng-template>
+
+<!-- Navbar
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
+
+    
+    <mdb-navbar-brand><a class="navbar-brand" href="#">Navbar</a></mdb-navbar-brand>
+  
+    
+    <links>
+  
+      
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+        </li>
+        
+        <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              Exhibitions<span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">View Exhibitions</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Tags</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Applications</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              Art Classes<span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Teachers</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Classes</a>
+            </div>
+          </li>
+
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>Announcements</a>
+        </li>
+
+        
+        <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Schedule</a>
+          </li>
+
+          
+        <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Artworks</a>
+          </li>
+
+          <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              Artists<span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">View Artist</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect href="#">Send Invitations</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Mediums</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Surface Type</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Reports</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Help</a>
+          </li>
+  
+  
+      </ul>
+      
+  
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link">
+           <p>Admin</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <div class="btn-group" mdbDropdown>
+              <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+              <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="divider dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </links>
+    
+  
+  </mdb-navbar>
+  
+
+  -->

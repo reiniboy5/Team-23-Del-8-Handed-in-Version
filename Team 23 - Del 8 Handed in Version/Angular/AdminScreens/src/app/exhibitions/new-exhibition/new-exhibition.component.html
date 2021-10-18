@@ -1,0 +1,379 @@
+<div class="container">
+  <form [formGroup]="exhibitionForm" (ngSubmit)="onSubmit($event)">
+    <div class="row">
+      <div class="col">
+        <h1>Create New Exhibition</h1>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-danger"
+          style="float: right"
+          (click)="onCancel(cancelModal)"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+    <h3 [hidden]="!exhibitionForm.invalid">
+      *Submit Button is disbaled, please enter all input values
+    </h3>
+    <hr />
+    <div class="row">
+      <div class="col">
+        <label>Exhibition Title:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Title"
+          name="exhibitionName"
+          formControlName="exhibitionName"
+        />
+        <!-- <div *ngIf="exhibitionName.invalid && (exhibitionName.dirty || exhibitionName.touched)" style="color: red;">
+              Exhibition Title Required
+            </div>  -->
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.exhibitionName">
+            <div
+              *ngIf="
+                exhibitionForm.get('exhibitionName').hasError(value.type) &&
+                (exhibitionForm.get('exhibitionName').dirty ||
+                  exhibitionForm.get('exhibitionName').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="exhibitionForm.get('exhibitionName').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <div class="form-group">
+          <label for="comment">Exhibition Description:</label>
+          <textarea
+            class="form-control"
+            rows="5"
+            id="comment"
+            name="exhibitionDescription"
+            formControlName="exhibitionDescription"
+          ></textarea>
+        </div>
+        <!-- <div *ngIf="exhibitionDescription.invalid && (exhibitionDescription.dirty || exhibitionDescription.touched)" style="color: red;">
+                Description Required
+              </div>  -->
+        <div class="validation-message">
+          <ng-container
+            *ngFor="let value of validation_message.exhibitionDescription"
+          >
+            <div
+              *ngIf="
+                exhibitionForm
+                  .get('exhibitionDescription')
+                  .hasError(value.type) &&
+                (exhibitionForm.get('exhibitionDescription').dirty ||
+                  exhibitionForm.get('exhibitionDescription').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="exhibitionForm.get('exhibitionDescription').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Exhibition Type:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            formControlName="exhibitionTypeID"
+            name="exhibitionTypeID"
+          >
+            <option
+              *ngFor="let type of exhibitionTypeList"
+              [value]="type.exhibitionTypeID"
+            >
+              {{ type.exhibitionTypeDecription }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container
+            *ngFor="let value of validation_message.exhibitionTypeID"
+          >
+            <div
+              *ngIf="
+                exhibitionForm.get('exhibitionTypeID').hasError(value.type) &&
+                (exhibitionForm.get('exhibitionTypeID').dirty ||
+                  exhibitionForm.get('exhibitionTypeID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="exhibitionForm.get('exhibitionTypeID').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+      </div>
+      <div class="col">
+        <label>Start-Date-Time: </label>
+        <input
+          class="form-control"
+          type="datetime-local"
+          name="exhibitionStartDateTime"
+          formControlName="exhibitionStartDateTime"
+        />
+        <!-- <div *ngIf="exhibitionDate.invalid && (exhibitionDate.dirty || exhibitionDate.touched)" style="color: red;">
+              Date Required
+            </div>  -->
+        <div class="validation-message">
+          <ng-container
+            *ngFor="let value of validation_message.exhibitionStartDateTime"
+          >
+            <div
+              *ngIf="
+                exhibitionForm
+                  .get('exhibitionStartDateTime')
+                  .hasError(value.type) &&
+                (exhibitionForm.get('exhibitionStartDateTime').dirty ||
+                  exhibitionForm.get('exhibitionStartDateTime').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="exhibitionForm.get('exhibitionStartDateTime').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>End-Date-Time: </label>
+        <input
+          type="time"
+          class="form-control"
+          type="datetime-local"
+          name="exhibitionEndDateTime"
+          formControlName="exhibitionEndDateTime"
+        />
+        <!-- <div *ngIf="exhibitionTime.invalid && (exhibitionTime.dirty || exhibitionTime.touched)" style="color: red;">
+              Time Required
+            </div>  -->
+        <div class="validation-message">
+          <ng-container
+            *ngFor="let value of validation_message.exhibitionEndDateTime"
+          >
+            <div
+              *ngIf="
+                exhibitionForm
+                  .get('exhibitionEndDateTime')
+                  .hasError(value.type) &&
+                (exhibitionForm.get('exhibitionEndDateTime').dirty ||
+                  exhibitionForm.get('exhibitionEndDateTime').touched)
+              "
+            >
+              <p class="error-message"></p>
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="exhibitionForm.get('exhibitionEndDateTime').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+
+        <br />
+        <!-- <label>Test</label>
+            <input type="time" class="form-control" name="time" #time="ngModel" [(ngModel)]="time">
+            <button (click)="onTime()">Check Time</button> -->
+
+        <label>Venue:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            formControlName="venueID"
+            name="venueID"
+          >
+            <option *ngFor="let type of venueList" [value]="type.venueID">
+              {{ type.venueDescription }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.venueID">
+            <div
+              *ngIf="
+                exhibitionForm.get('venueID').hasError(value.type) &&
+                (exhibitionForm.get('venueID').dirty ||
+                  exhibitionForm.get('venueID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="exhibitionForm.get('venueID').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Organisation:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            formControlName="organisationID"
+            name="organisationID"
+          >
+            <option
+              *ngFor="let type of organisationList"
+              [value]="type.organisationID"
+            >
+              {{ type.organisationalName }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.organisationID">
+            <div
+              *ngIf="
+                exhibitionForm.get('organisationID').hasError(value.type) &&
+                (exhibitionForm.get('organisationID').dirty ||
+                  exhibitionForm.get('organisationID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="exhibitionForm.get('organisationID').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <div class="row">
+          <label>Add Picture: </label>
+          <input
+            type="hidden"
+            name="exhibitionImage"
+            formControlName="exhibitionImage"
+            [value]="base64"
+          />
+          <!-- <button type="button" class="btn btn-outline-primary" (click)="onCheck()">Check</button> -->
+          <input
+            type="file"
+            accept="image/*"
+            (change)="onSelectNewFile($event.target?.files)"
+          />
+          <!-- <img [src]=this.service.driverData.driverImage alt="Driver Image" width="350px" height="250px"> -->
+        </div>
+      </div>
+    </div>
+    <br />
+    <!-- <button type="button" class="btn btn-primary btn-lg" (click)="addAnnouncement(announcementModal)">Submit</button> -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      style="width: 300px; height: 50px"
+      [disabled]="exhibitionForm.invalid"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+
+<!-- =========MODALS BELOW======================= -->
+
+<ng-template #announcementModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Enter Announcement</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Announcement</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="5"
+      ></textarea>
+    </div>
+  </div>
+  <br />
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.dismiss('Cross click')"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="confirmAnnouncement(announcementModal)"
+    >
+      Confirm
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #cancelModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Cancel Create Exhibition</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to cancel this creation process?</p>
+  </div>
+  <br />
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.dismiss('Cross click')"
+    >
+      No
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="confirmCancel(cancelModal)"
+    >
+      Yes
+    </button>
+  </div>
+</ng-template>

@@ -1,0 +1,75 @@
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col" style="background-color: black;">
+            <img src="../assets/logo/artech.png" class="logo"  alt="user">
+        </div>
+
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <h3>Enter Banking Details</h3>
+                </div>
+                <div class="col">
+                    <button mdbBtn type="button" gradient="peach" [routerLink]="['/register']"  style="float: right" rounded="true" mdbWavesEffect>Back</button>
+                </div>
+            </div>
+            <br>
+
+                <label>Bank</label>
+                <input type="text" class="form-control"  placeholder="Bank">
+        <br>
+        <label>Branch Code</label>
+                <input type="text" class="form-control"  placeholder="Branch Code">
+        <br>
+
+        
+        <div class="row">
+            <div class="col">
+                <label>Account Name</label>
+                <input type="email" class="form-control" style="width: 250px;" placeholder="Account Name">
+            </div>
+            <div class="col">
+                <label>Account Type</label>
+                <input type="text" class="form-control" style="width: 250px;" placeholder="Account Type">
+            </div>
+        </div>
+        <br>
+        <label>Account Number</label>
+                <input type="text" class="form-control"  placeholder="Account Nr">
+        <br>
+
+
+
+
+        
+     
+
+        
+        
+        <button mdbBtn type="button" gradient="purple" (click)="onRegister(registerModal)"  rounded="true" mdbWavesEffect>Register</button>
+
+
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================================================ -->
+<!-- ===============MODALS BELOW========================================================================================================== -->
+
+
+<ng-template #registerModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Confirm Registration</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Do you want to confirm registration details?</p>
+    </div>
+    <div class="modal-footer">
+      <button mdbBtn type="button" gradient="purple" (click)="submitRegistration(registerModal)" rounded="true" mdbWavesEffect>Confirm</button>
+    </div>
+  </ng-template>

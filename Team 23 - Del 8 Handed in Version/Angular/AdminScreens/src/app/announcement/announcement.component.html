@@ -1,0 +1,79 @@
+<div class="container">
+  <form [formGroup]="announceForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <h1>Post Announcement</h1>
+    </div>
+    <hr />
+    <div class="row">
+      <label>Announcement Title:</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Title"
+        name="announcementTitle"
+        formControlName="announcementTitle"
+      />
+      <div class="validation-message">
+        <ng-container *ngFor="let value of error_messages.announcementTitle">
+          <div
+            *ngIf="
+              announceForm.get('announcementTitle').hasError(value.type) &&
+              (announceForm.get('announcementTitle').dirty ||
+                announceForm.get('announcementTitle').touched)
+            "
+          >
+            {{ value.message }}
+          </div>
+        </ng-container>
+      </div>
+      <div class="success" *ngIf="announceForm.get('announcementTitle').valid">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <br />
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Enter Announcement Here:</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="5"
+        name="announcementDescription"
+        formControlName="announcementDescription"
+      ></textarea>
+      <div class="validation-message">
+        <ng-container
+          *ngFor="let value of error_messages.announcementDescription"
+        >
+          <div
+            *ngIf="
+              announceForm
+                .get('announcementDescription')
+                .hasError(value.type) &&
+              (announceForm.get('announcementDescription').dirty ||
+                announceForm.get('announcementDescription').touched)
+            "
+          >
+            {{ value.message }}
+          </div>
+        </ng-container>
+      </div>
+      <div
+        class="success"
+        *ngIf="announceForm.get('announcementDescription').valid"
+      >
+        <i class="fas fa-check-circle"></i>
+      </div>
+    </div>
+    <hr />
+
+    <button
+      type="button"
+      class="btn btn-success btn-lg"
+      [disabled]="announceForm.invalid"
+      type="submit"
+    >
+      Post
+    </button>
+  </form>
+</div>

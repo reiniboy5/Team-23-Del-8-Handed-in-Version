@@ -1,0 +1,449 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<form
+  [formGroup]="addArtworkForm"
+  (ngSubmit)="onSubmit($event, addArtworkModal)"
+>
+  <div class="container">
+    <br />
+    <div class="row">
+      <div class="col">
+        <h3>Add Artwork</h3>
+      </div>
+      <div class="col">
+        <button
+          mdbBtn
+          type="button"
+          gradient="peach"
+          (click)="cancelAddArtwork(cancelAddArtworkModal)"
+          style="float: right"
+          rounded="true"
+          mdbWavesEffect
+        >
+          Back
+        </button>
+      </div>
+    </div>
+    <br />
+    <h3 [hidden]="!addArtworkForm.invalid">
+      *Submit Button is disbaled, please enter all input values
+    </h3>
+
+    <div class="row">
+      <div class="col">
+        <label>Artwork Title</label>
+        <input
+          type="text"
+          formControlName="ArtworkTitle"
+          class="form-control"
+          style="width: 250px"
+          placeholder="Enter Title"
+        />
+        <div
+          class="error-messages"
+          *ngFor="let error of error_messages.ArtworkTitle"
+        >
+          <div
+            style="position: static"
+            class="error-message"
+            *ngIf="
+              addArtworkForm.get('ArtworkTitle').hasError(error.type) &&
+              (addArtworkForm.get('ArtworkTitle').dirty ||
+                addArtworkForm.get('ArtworkTitle').touched)
+            "
+          >
+            {{ error.message }}
+          </div>
+        </div>
+        <div class="success" *ngIf="addArtworkForm.get('ArtworkTitle').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+      </div>
+
+      <div class="col">
+        <label>Artwork Price</label>
+        <input
+          type="text"
+          formControlName="ArtworkPrice"
+          class="form-control"
+          style="width: 250px"
+          placeholder="Enter Artwork Price"
+        />
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.ArtworkPrice">
+            <div
+              class="error-message"
+              *ngIf="
+                addArtworkForm.get('ArtworkPrice').hasError(error.type) &&
+                (addArtworkForm.get('ArtworkPrice').dirty ||
+                  addArtworkForm.get('ArtworkPrice').touched)
+              "
+            >
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="success" *ngIf="addArtworkForm.get('ArtworkPrice').valid">
+        <i class="fas fa-check-circle"></i>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col">
+        <div>
+          <label>Medium Type</label>
+          <div class="input-group mb-3">
+            <select
+              name="MediumTypeID"
+              formControlName="MediumTypeID"
+              class="btn btn-outline-primary"
+              (change)="selectInput($event)"
+            >
+              <option value="undefined">Select Medium Type</option>
+              <option
+                *ngFor="let mediumType of ListMediumTypes"
+                [value]="mediumType.mediumTypeID"
+              >
+                {{ mediumType.mediumTypeName }}
+              </option>
+            </select>
+          </div>
+          <div
+            class="error-messages"
+            *ngFor="let error of error_messages.MediumTypeID"
+          >
+            <div
+              class="error-message"
+              *ngIf="
+                addArtworkForm.get('MediumTypeID').hasError(error.type) &&
+                (addArtworkForm.get('MediumTypeID').dirty ||
+                  addArtworkForm.get('MediumTypeID').touched)
+              "
+            >
+              {{ error.message }}
+            </div>
+          </div>
+        </div>
+        <div class="success" *ngIf="addArtworkForm.get('MediumTypeID').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <label>Artwork Type</label>
+          <div class="input-group mb-3">
+            <select
+              name="ArtworkTypeID"
+              formControlName="ArtworkTypeID"
+              class="btn btn-outline-primary"
+              (change)="selectInput($event)"
+            >
+              <option value="undefined">Select Artwork Type</option>
+              <option
+                *ngFor="let artworkType of ListArtworkTypes"
+                [value]="artworkType.artworkTypeID"
+              >
+                {{ artworkType.artworkTypeDescription }}
+              </option>
+            </select>
+          </div>
+          <div
+            class="error-messages"
+            *ngFor="let error of error_messages.ArtworkTypeID"
+          >
+            <div
+              style="position: static"
+              class="error-message"
+              *ngIf="
+                addArtworkForm.get('ArtworkTypeID').hasError(error.type) &&
+                (addArtworkForm.get('ArtworkTypeID').dirty ||
+                  addArtworkForm.get('ArtworkTypeID').touched)
+              "
+            >
+              {{ error.message }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="success" *ngIf="addArtworkForm.get('ArtworkTypeID').valid">
+        <i class="fas fa-check-circle"></i>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <div class="col">
+        <div>
+          <label>Surface Type</label>
+          <div class="input-group mb-3">
+            <select
+              name="SurfaceType"
+              formControlName="SurfaceTypeID"
+              class="btn btn-outline-primary"
+            >
+              <option value="undefined">Select Surface Type</option>
+              <option
+                *ngFor="let surfaceType of ListSurfaceTypes"
+                [value]="surfaceType.surfaceTypeID"
+                rounded="true"
+              >
+                {{ surfaceType.surfaceTypeName }}
+              </option>
+            </select>
+            <div
+              class="error-messages"
+              *ngFor="let error of error_messages.SurfaceTypeID"
+            >
+              <div
+                style="position: static"
+                class="error-message"
+                *ngIf="
+                  addArtworkForm.get('SurfaceTypeID').hasError(error.type) &&
+                  (addArtworkForm.get('SurfaceTypeID').dirty ||
+                    addArtworkForm.get('SurfaceTypeID').touched)
+                "
+              >
+                {{ error.message }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="success" *ngIf="addArtworkForm.get('SurfaceTypeID').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+      </div>
+      <div class="col">
+        <label>Frame Colour</label>
+        <div class="input-group mb-3">
+          <select
+            name="FrameColour"
+            formControlName="FrameColourID"
+            class="btn btn-outline-primary"
+          >
+            <option value="undefined">Select Frame Colour</option>
+            <option
+              *ngFor="let frameColur of ListFrameColours"
+              [value]="frameColur.frameColourID"
+            >
+              {{ frameColur.frameColourDescription }}
+            </option>
+          </select>
+          <div
+            class="error-messages"
+            *ngFor="let error of error_messages.FrameColourID"
+          >
+            <div
+              style="position: static"
+              class="error-message"
+              *ngIf="
+                addArtworkForm.get('FrameColourID').hasError(error.type) &&
+                (addArtworkForm.get('FrameColourID').dirty ||
+                  addArtworkForm.get('FrameColourID').touched)
+              "
+            >
+              {{ error.message }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="success" *ngIf="addArtworkForm.get('FrameColourID').valid">
+        <i class="fas fa-check-circle"></i>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col">
+        <label>Artwork Dimension</label>
+        <div class="input-group mb-3">
+          <select
+            name="ArtworkDimension"
+            formControlName="ArtworkDimensionID"
+            class="btn btn-outline-primary"
+          >
+            <option value="undefined">Select Dimension</option>
+            <option
+              *ngFor="let dimension of ListArtworkDimensions"
+              [value]="dimension.artworkDimensionID"
+            >
+              {{ dimension.artworkDimensionDescription }}
+            </option>
+          </select>
+          <div
+            class="error-messages"
+            *ngFor="let error of error_messages.ArtworkDimensionID"
+          >
+            <div
+              style="position: static"
+              class="error-message"
+              *ngIf="
+                addArtworkForm.get('ArtworkDimensionID').hasError(error.type) &&
+                (addArtworkForm.get('ArtworkDimensionID').dirty ||
+                  addArtworkForm.get('ArtworkDimensionID').touched)
+              "
+            >
+              {{ error.message }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="success"
+        *ngIf="addArtworkForm.get('ArtworkDimensionID').valid"
+      >
+        <i class="fas fa-check-circle"></i>
+      </div>
+    </div>
+    <br />
+
+    <br />
+    <br />
+
+    <div class="row">
+      <div class="col">
+        <fieldset class="form-group">
+          <label>Click on tile to upload Artwork Picture</label>
+          {{ imageError }}
+          <div class="custom-file fileInputProfileWrap">
+            <input
+              type="file"
+              formControlName="ArtworkPicture"
+              (change)="fileChangeEvent($event)"
+              class="fileInputProfile"
+            />
+            <div class="img-space">
+              <ng-container *ngIf="isImageSaved; else elseTemplate">
+                <img [src]="cardImageBase64" height="100px" />
+              </ng-container>
+              <ng-template #elseTemplate>
+                <img
+                  src="./../../assets/placeholder.png"
+                  class="img-responsive"
+                  style="width: 100px; height: 100px"
+                />
+              </ng-template>
+            </div>
+          </div>
+          <div class="error-messages">
+            <ng-container *ngFor="let error of error_messages.ArtworkPicture">
+              <div
+                class="error-message"
+                *ngIf="
+                  addArtworkForm.get('ArtworkPicture').hasError(error.type) &&
+                  (addArtworkForm.get('ArtworkPicture').dirty ||
+                    addArtworkForm.get('ArtworkPicture').touched)
+                "
+              >
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+        </fieldset>
+        <a class="btn btn-danger" (click)="removeImage()" *ngIf="isImageSaved"
+          >Remove</a
+        >
+      </div>
+    </div>
+    <br />
+
+    <button
+      mdbBtn
+      type="button"
+      (click)="onAddArtwork(addArtworkModal)"
+      gradient="blue"
+      rounded="true"
+      mdbWavesEffect
+      [disabled]="addArtworkForm.invalid"
+    >
+      Submit
+    </button>
+    <!--<button mdbBtn type="button" gradient="purple" [routerLink]="['/register-artist']"  rounded="true" mdbWavesEffect>Next</button> -->
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- ===============MODALS BELOW========================================================================================================== -->
+
+  <ng-template #addArtworkModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Confirm Add Artwork</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Do you want to confirm addition of art?</p>
+    </div>
+    <div class="modal-footer">
+      <button
+        mdbBtn
+        type="button"
+        gradient="peach"
+        (click)="modal.dismiss('Cross click')"
+        rounded="true"
+        mdbWavesEffect
+      >
+        No
+      </button>
+      <button
+        mdbBtn
+        type="submit"
+        gradient="purple"
+        (click)="onSubmit($event, addArtworkModal)"
+        rounded="true"
+        mdbWavesEffect
+      >
+        Confirm
+      </button>
+    </div>
+  </ng-template>
+
+  <!-- ============================================================================ -->
+  <!-- ===============MODALS BELOW========================================================================================================== -->
+
+  <ng-template #cancelAddArtworkModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Cancel</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to cancel adding artwork?</p>
+    </div>
+    <div class="modal-footer">
+      <button
+        mdbBtn
+        type="button"
+        gradient="peach"
+        (click)="modal.dismiss('Cross click')"
+        rounded="true"
+        mdbWavesEffect
+      >
+        No
+      </button>
+      <button
+        mdbBtn
+        type="button"
+        gradient="purple"
+        (click)="yesCancel(cancelAddArtworkModal)"
+        rounded="true"
+        mdbWavesEffect
+      >
+        Yes
+      </button>
+    </div>
+  </ng-template>
+</form>

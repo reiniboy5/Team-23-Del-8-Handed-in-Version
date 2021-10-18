@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <h1>Art Class Report</h1>
+  </div>
+  <hr />
+  <div class="row">
+    <label>Art Class:</label>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend"></div>
+      <select
+        (click)="hideTable()"
+        class="custom-select"
+        id="inputGroupSelect01"
+        (change)="getClass($event.target.value)"
+      >
+        <option value="0">--Select Art Class--</option>
+        <option *ngFor="let class of classes" value="{{ class.ArtClassID }}">
+          {{ class.ArtClassName }}
+        </option>
+      </select>
+    </div>
+    <br />
+    <!-- <label>Search Art Class: </label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search" value="Comic Arts">
+            <div class="input-group-append">
+              <button class="btn btn-outline-success" type="button"><i class="fas fa-search"></i></button>
+            </div>
+          </div> -->
+
+    <br />
+    <br />
+    <button type="button" (click)="showTable()" class="btn btn-primary">
+      Generate Art Class Report
+    </button>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="table">
+      <table class="table">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">Student</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="isShown">
+          <tr *ngFor="let class of class">
+            <th>{{ class.Student }}</th>
+            <td>{{ class.Email }}</td>
+            <td>0{{ class.PhoneNumber }}</td>
+            <!-- <td>{{ class.PaymentStatusDescription }}</td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <button type="button" class="btn btn-primary" style="margin-right: 15px">
+      Export
+    </button>
+    <button type="button" class="btn btn-primary">Print</button>
+  </div>
+</div>

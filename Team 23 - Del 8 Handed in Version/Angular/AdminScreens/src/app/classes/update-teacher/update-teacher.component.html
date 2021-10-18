@@ -1,0 +1,242 @@
+<div class="container">
+  <form [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col">
+        <h1>Update Teacher Details</h1>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-danger"
+          style="float: right"
+          (click)="onCancel(cancelTeacherModal)"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+    <h3 [hidden]="!teacherForm.invalid">
+      *Submit Button is disbaled, please enter all input values
+    </h3>
+    <hr />
+    <div class="row">
+      <div class="col">
+        <label>First Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="First Name"
+          name="teacherName"
+          formControlName="teacherName"
+        />
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.teacherName">
+            <div
+              *ngIf="
+                teacherForm.get('teacherName').hasError(value.type) &&
+                (teacherForm.get('teacherName').dirty ||
+                  teacherForm.get('teacherName').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="teacherForm.get('teacherName').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Last Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Last Name"
+          name="teacherSurname"
+          formControlName="teacherSurname"
+        />
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.teacherSurname">
+            <div
+              *ngIf="
+                teacherForm.get('teacherSurname').hasError(value.type) &&
+                (teacherForm.get('teacherSurname').dirty ||
+                  teacherForm.get('teacherSurname').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="teacherForm.get('teacherSurname').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+        <label>Type of Teacher:</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <select
+            class="custom-select"
+            formControlName="teacherTypeID"
+            name="teacherTypeID"
+          >
+            <!-- <option  [value]="teacherService.selectedTeacher.teacherType.teacherTypeID">{{teacherService.selectedTeacher.teacherType.teacherTypeDescription}}</option> -->
+            <option
+              *ngFor="let type of teacherTypeList"
+              [value]="type.teacherTypeID"
+            >
+              {{ type.teacherTypeDescription }}
+            </option>
+          </select>
+        </div>
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.teacherTypeID">
+            <div
+              *ngIf="
+                teacherForm.get('teacherTypeID').hasError(value.type) &&
+                (teacherForm.get('teacherTypeID').dirty ||
+                  teacherForm.get('teacherTypeID').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="teacherForm.get('teacherTypeID').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <!-- 
+              <label>ID-Number:</label>
+            <input type="text" class="form-control" placeholder="ID">
+            <br> -->
+      </div>
+      <div class="col">
+        <label>Phone Number:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="+ (27)"
+          name="teacherPhoneNumber"
+          formControlName="teacherPhoneNumber"
+        />
+        <div class="validation-message">
+          <ng-container
+            *ngFor="let value of validation_message.teacherPhoneNumber"
+          >
+            <div
+              *ngIf="
+                teacherForm.get('teacherPhoneNumber').hasError(value.type) &&
+                (teacherForm.get('teacherPhoneNumber').dirty ||
+                  teacherForm.get('teacherPhoneNumber').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div
+          class="success"
+          *ngIf="teacherForm.get('teacherPhoneNumber').valid"
+        >
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <label>Email Address:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="@gmail.com"
+          name="teacherEmail"
+          formControlName="teacherEmail"
+        />
+        <div class="validation-message">
+          <ng-container *ngFor="let value of validation_message.teacherEmail">
+            <div
+              *ngIf="
+                teacherForm.get('teacherEmail').hasError(value.type) &&
+                (teacherForm.get('teacherEmail').dirty ||
+                  teacherForm.get('teacherEmail').touched)
+              "
+            >
+              {{ value.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="success" *ngIf="teacherForm.get('teacherEmail').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary btn-lg" type="submit">
+      Save Changes
+    </button>
+  </form>
+</div>
+
+<!-- =========MODALS BELOW======================= -->
+
+<ng-template #teacherModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Update Teacher</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to update Teacher details?</p>
+  </div>
+  <br />
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.dismiss('Cross click')"
+    >
+      No
+    </button>
+    <button type="button" class="btn btn-primary" type="submit">Update</button>
+  </div>
+</ng-template>
+
+<ng-template #cancelTeacherModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Cancel Updating Teacher</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to cancel updating class Teacher?</p>
+  </div>
+  <br />
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.dismiss('Cross click')"
+    >
+      No
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="confirmCancel(teacherModal)"
+    >
+      Yes
+    </button>
+  </div>
+</ng-template>

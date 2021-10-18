@@ -1,0 +1,188 @@
+<h3>My Exhibitions:</h3>
+<button
+  mdbBtn
+  gradient="blue"
+  rounded="true"
+  mdbWavesEffect
+  (click)="onHint(hintModal)"
+>
+  Hint <i class="far fa-paper-plane"></i>
+</button>
+
+<br />
+<div *ngFor="let application of listMyApplication">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+
+        <th scope="col">Exhibition Name</th>
+
+        <th scope="col">Application Status</th>
+
+        <th scope="col"></th>
+
+        <th scope="col" *ngIf="application.applicationStatusID == '2'"></th>
+
+        <th scope="col"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th scope="row">
+          <div class="image-card">
+            <img
+              class="card-img-top"
+              src="{{ application.exhibition.exhibitionImage }}"
+              alt="Card image cap"
+            />
+          </div>
+        </th>
+
+        <td>{{ application.exhibition.exhibitionName }}</td>
+
+        <td>
+          {{ application.applicationStatus.applicationStatusDescription }}
+        </td>
+
+        <td>
+          <button
+            mdbBtn
+            type="button"
+            gradient="peach"
+            rounded="true"
+            *ngIf="application.applicationStatusID == '1'"
+            mdbWavesEffect
+            (click)="cancelApplication(cancelApplicationModal)"
+          >
+            Withdraw <i class="fas fa-sign-out-alt"></i>
+          </button>
+        </td>
+
+        <td>
+          <button
+            mdbBtn
+            type="button"
+            gradient="purple"
+            *ngIf="application.applicationStatusID == '2'"
+            (click)="generateTag(application)"
+            rounded="true"
+            mdbWavesEffect
+          >
+            Generate Tags
+          </button>
+        </td>
+
+        <td>
+          <button
+            mdbBtn
+            type="button"
+            gradient="purple"
+            (click)="selectedApp(application)"
+            rounded="true"
+            mdbWavesEffect
+          >
+            View Application
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br />
+
+  <br />
+
+  <!-- ======================================================================================= -->
+
+  <!-- =======================MODALS BELOW================================ -->
+
+  <ng-template #cancelApplicationModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Cancel Application</h4>
+
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <p>Are you sure you want to cancel your Application and withdraw?</p>
+    </div>
+
+    <div class="modal-footer">
+      <button
+        mdbBtn
+        type="button"
+        gradient="peach"
+        rounded="true"
+        style="float: right"
+        (click)="modal.dismiss('Cross click')"
+        mdbWavesEffect
+      >
+        No
+      </button>
+
+      <button
+        mdbBtn
+        type="button"
+        gradient="purple"
+        (click)="confirmCancel(application.exhibitionApplicationID)"
+        rounded="true"
+        mdbWavesEffect
+      >
+        Yes
+      </button>
+    </div>
+  </ng-template>
+</div>
+
+<ng-template #hintModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Hint</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>
+      This the Exhibitions you applied for. You can view your application. Once
+      your application is submitted you can generate tags for your artwork.
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button
+      mdbBtn
+      type="button"
+      gradient="purple"
+      (click)="confirmRefund(requestRefundModal)"
+      rounded="true"
+      mdbWavesEffect
+      (click)="modal.dismiss('Cross click')"
+    >
+      OK
+    </button>
+  </div>
+</ng-template>
+<!-- <button
+            mdbBtn
+            type="button"
+            gradient="peach"
+            rounded="true"
+            *ngIf="application.applicationStatusID != '4'"
+            mdbWavesEffect
+            (click)="cancelApplication(cancelApplicationModal)"
+          >
+            Withdraw <i class="fas fa-sign-out-alt"></i>
+          </button> -->

@@ -1,0 +1,85 @@
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Class Name</th>
+        <th scope="col">Payment Status</th>
+        <th scope="col">Cancel Booking</th>
+        <th scope="col">Refund</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+            <div class="image-card">
+            <img class="card-img-top" src="../../../assets/art-class/theme1.png" alt="Card image cap">
+        </div>
+        </th>
+        <td>Conflict and Adversity</td>
+        <td>'Paid'</td>
+        <td>
+            <button mdbBtn type="button" gradient="peach" rounded="true" (click)="onCancelBooking(cancelBookingModal)" mdbWavesEffect>Cancel <i class="fas fa-times-circle"></i></button>
+        </td>
+        <td>
+            <button mdbBtn type="button" gradient="purple" rounded="true" (click)="onRequestRefund(requestRefundModal)" mdbWavesEffect>Request Refund</button>            
+
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">
+            <div class="image-card">
+            <img class="card-img-top" src="../../../assets/art-class/theme2.png" alt="Card image cap">
+        </div>
+        </th>
+        <td>Digital Art</td>
+        <td>'Not Paid'</td>
+        <td>
+            <button mdbBtn type="button" gradient="peach" rounded="true"  (click)="onCancelBooking(cancelBookingModal)"  mdbWavesEffect>Cancel <i class="fas fa-times-circle"></i></button>
+        </td>
+        <td>
+            <button mdbBtn type="button" gradient="purple"  (click)="onRequestRefund(requestRefundModal)" rounded="true" mdbWavesEffect>Make Payment</button>            
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+
+  <!-- ======================================================================================= -->
+  <!-- =======================MODALS BELOW================================ -->
+
+  <ng-template #cancelBookingModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Confirm Cancel Booking</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to cancel your Booking?</p>
+    </div>
+    <div class="modal-footer">
+      <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right;" (click)="modal.dismiss('Cross click')"  mdbWavesEffect>No</button>
+      <button mdbBtn type="button" gradient="purple" (click)="confirmCancel(cancelBookingModal)" rounded="true" mdbWavesEffect>Yes</button>
+    </div>
+  </ng-template>
+
+
+  <ng-template #requestRefundModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Confirm Refund Request</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to request for a refund?</p>
+    </div>
+    <div class="modal-footer">
+      <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right;" (click)="modal.dismiss('Cross click')"  mdbWavesEffect>No</button>
+      <button mdbBtn type="button" gradient="purple" (click)="confirmRefund(requestRefundModal)" rounded="true" mdbWavesEffect>Confirm</button>
+    </div>
+  </ng-template>

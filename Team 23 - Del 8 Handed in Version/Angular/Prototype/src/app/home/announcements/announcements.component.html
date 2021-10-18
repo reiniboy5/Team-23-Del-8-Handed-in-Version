@@ -1,0 +1,38 @@
+<div class="page-padding">
+  <div class="container">
+    <img
+      src="../../../assets/art-class/art-class-poster.png"
+      alt=""
+      style="width: 900px; height: 300px"
+    />
+    <div class="top-right"><h1>Announcements</h1></div>
+  </div>
+  <hr />
+  <div class="card" *ngFor="let item of announcementList">
+    <div class="card-header">
+      Posted on: {{ item.announceStamp | date: "fullDate" }}
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">
+        <strong>{{ item.announcementTitle }}</strong>
+      </h2>
+      <p class="card-text">
+        {{ item.announcementDescription }}
+      </p>
+    </div>
+    <div class="card-footer">Posted by: Miekie van Heerden</div>
+  </div>
+  <br />
+  <!-- <div class="card">
+        <div class="card-header">
+          Posted on: Monday, May 10 2021 
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><strong>Class Date Changed</strong></h5>
+          <p class="card-text">Hello everyone the Digital Art start and end date has chnaged to 12-14 June.</p>
+        </div>
+        <div class="card-footer">
+            Posted by: Miekie van Heerden
+          </div>
+      </div> -->
+</div>

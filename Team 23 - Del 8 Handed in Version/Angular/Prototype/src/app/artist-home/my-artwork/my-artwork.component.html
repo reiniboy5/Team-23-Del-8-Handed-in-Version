@@ -1,0 +1,127 @@
+<div class="page-padding">
+    <br>
+<div class="container">
+    <img src="../../../assets/art-class/art-class-poster.png" alt="" style="width: 900px; height: 300px"> 
+    <div class="bottom-left">
+        <img src="../../../assets/user/User_Circle.png" alt="" style="width: 100px; height: 100px"> 
+        <h1>Reinhardt Smit</h1>
+    </div>
+</div>
+<hr>
+<h3>My Artworks: </h3>
+<p>Add your Artworks here. Maximum of 5 Artworks</p>
+<br>
+<button type="button" class="btn btn-secondary btn-rounded" (click)="addArtwork(addArtworkModal)" >Add Artwork <i class="fas fa-plus"></i></button>
+<br>
+<br>
+<div class="card-deck">
+    <div class="card">
+      <img src="../assets/artworks/artwork1.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Ori Blind Forest</h5>
+        <p class="card-text">
+            <li>Medium: Ink</li>
+            <li>Surface: Digital</li>
+            <li>Dimensions: w 1000mm - h 562mm</li>
+            <li>Price: R 1500.00</li>
+        </p>
+        <p class="card-text"><small class="text-muted">By James McDonald</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="../assets/artworks/artwork2.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Colourful Character</h5>
+        <p class="card-text">
+            <li>Medium: Painting</li>
+            <li>Surface: Paper and Cardboard.</li>
+            <li>Dimensions: w 600mm - h 600mm</li>
+            <li>Price: R 2000.00</li>
+        </p>
+        <p class="card-text"><small class="text-muted">By Jamie Smith</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="../assets/artworks/artwork3.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Little Things</h5>
+        <p class="card-text">
+            <li>Medium: Pencil</li>
+            <li>Surface: Paper Drawing</li>
+            <li>Dimensions: w 1200mm - h 900mm</li>
+            <li>Price: R 1200.00</li>
+        </p>
+        <p class="card-text"><small class="text-muted">By Danny McFarlane</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================================================== -->
+<!-- ========================MODAL BELOW ===================================================================== -->
+
+<!-- <ng-template #addArtworkModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Add Artwork</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <label>Artwork Title:</label>
+        <input type="text" class="form-control" style="width: 250px;" placeholder="Artwork Title">
+        <br>
+        <label>Medium used:</label>
+        <input type="text" class="form-control" style="width: 250px;" placeholder="Medium type">
+        <br>
+        <label>Surface used:</label>
+        <input type="text" class="form-control" style="width: 250px;" placeholder="Surface Type">
+        <br>
+        <label>Dimmensions</label>
+        <input type="text" class="form-control" style="width: 250px;" placeholder="mm x mm">
+        <br>
+        <button type="button" class="btn btn-success btn-rounded" disabled>Add Picture <i class="fas fa-plus"></i></button>
+        <br>
+        <div class="row">
+          <div class="col">
+            <p>little_things_picture.png</p>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-danger btn-sm">Remove</button>
+          </div>
+        </div>
+              </div>
+    <div class="modal-footer">
+      <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right;" (click)="modal.dismiss('Cross click')"  mdbWavesEffect>Cancel</button>
+      <button mdbBtn type="button" gradient="purple" (click)="confirmArtwork(addArtworkModal)" rounded="true" mdbWavesEffect>Submit</button>
+    </div>
+  </ng-template> -->
+
+
+
+  <ng-template #addArtworkModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Make Payment</h4>
+      <img src="./assets/user/paypal.png" alt="" style="width: 100px; height: 60px"> 
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <label>Enter Card Number:</label>
+        <input type="text" class="form-control" style="width: 250px;" placeholder="Card Number">
+        <br>
+        <label>Enter Expiried Date:</label>
+        <input type="text" class="form-control" style="width: 250px;" placeholder="00/00">
+        <br>
+        <label>Enter CVV</label>
+        <input type="text" class="form-control" style="width: 250px;" placeholder="CVV">
+        <br>
+
+  
+              </div>
+    <div class="modal-footer">
+      <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right;" (click)="modal.dismiss('Cross click')"  mdbWavesEffect>Cancel</button>
+      <button type="button" class="btn btn-success"(click)="confirmArtwork(addArtworkModal)" rounded="true" mdbWavesEffect>Make Payment</button>
+    </div>
+  </ng-template>

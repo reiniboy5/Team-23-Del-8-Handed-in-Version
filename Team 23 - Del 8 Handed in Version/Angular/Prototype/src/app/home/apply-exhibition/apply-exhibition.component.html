@@ -1,0 +1,196 @@
+<form [formGroup]="exhibitionApplicationForm" (ngSubmit)="submitApplication(applyExhibitionModal,$event)">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  </head>
+  <div class="page-padding">
+    <br>
+    <div class="row">
+      <div class="col">
+        <h1>Exhibition Application</h1>
+
+      </div>
+      <div class="col" style="float: right;">
+        <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right"
+          (click)="cancelApplication(cancelApplicationModal)" mdbWavesEffect>
+          Back
+        </button>
+      </div>
+    </div>
+    <hr>
+    <div class="form-group">
+      <label for="comment">Provide your motivaiton to take part in this exhibition:</label>
+      <textarea formControlName="ApplicationDescription" class="form-control" rows="5" id="comment"></textarea>
+      <div class="error-messages">
+        <ng-container *ngFor="let error of error_messages.ApplicationDescription">
+          <div class="error-message" *ngIf=" exhibitionApplicationForm.get('ApplicationDescription').hasError(error.type) &&
+             (exhibitionApplicationForm.get('ApplicationDescription').dirty || exhibitionApplicationForm.get('ApplicationDescription').touched)">
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <p>Provide 3 pictures of your artwork</p>
+    <div class="row">
+      <!--
+      <div class="col">
+        <div class="row">
+          <img [src]="url" height="200"> <br/>
+          <input type='file' formControlName="ExhibitionPicture1"  (change)="onSelectFile($event)">
+      </div>
+      </div>
+      -->
+      <br>
+      <div class="col">
+        <fieldset class="form-group">
+  
+          <label>Click on tile to upload</label>
+          {{imageError}}
+          <div class="custom-file fileInputProfileWrap">
+              <input type="file" formControlName="ExhibitionPicture1"  (change)="fileChangeEvent($event)" class="fileInputProfile">
+              <div class="img-space">
+  
+                  <ng-container *ngIf="isImageSaved; else elseTemplate">
+                      <img [src]="cardImageBase64"  height="200"/>
+                  </ng-container>
+                  <ng-template #elseTemplate>
+  
+                      <img src="./../../assets/placeholder.png" class="img-responsive">
+                  </ng-template>
+  
+              </div>
+  
+          </div>
+          <div class="error-messages">
+            <ng-container *ngFor="let error of error_messages.ExhibitionPicture1">
+              <div class="error-message" *ngIf=" exhibitionApplicationForm.get('ExhibitionPicture1').hasError(error.type) &&
+                 (exhibitionApplicationForm.get('ExhibitionPicture1').dirty || exhibitionApplicationForm.get('ExhibitionPicture1').touched)">
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+      </fieldset>
+      <a class="btn btn-danger" (click)="removeImage()" *ngIf="isImageSaved">Remove</a>
+    </div>
+      <div class="col">
+      <fieldset class="form-group">
+
+        <label>Click on tile to upload</label>
+        {{imageError}}
+        <div class="custom-file fileInputProfileWrap">
+            <input type="file" formControlName="ExhibitionPicture2"  (change)="fileChangeEvent2($event)" class="fileInputProfile">
+            <div class="img-space">
+
+                <ng-container *ngIf="isImageSaved2; else elseTemplate">
+                    <img [src]="cardImageBase642"  height="200"/>
+                </ng-container>
+                <ng-template #elseTemplate>
+
+                    <img src="./../../assets/placeholder.png" class="img-responsive">
+                </ng-template>
+
+            </div>
+
+        </div>
+        <div class="error-messages">
+          <ng-container *ngFor="let error of error_messages.ExhibitionPicture2">
+            <div class="error-message" *ngIf=" exhibitionApplicationForm.get('ExhibitionPicture2').hasError(error.type) &&
+               (exhibitionApplicationForm.get('ExhibitionPicture2').dirty || exhibitionApplicationForm.get('ExhibitionPicture2').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div>
+    </fieldset>
+    <a class="btn btn-danger" (click)="removeImage2()" *ngIf="isImageSaved2">Remove</a>
+  </div>
+  <div class="col">
+    <fieldset class="form-group">
+
+      <label>Click on tile to upload</label>
+      {{imageError}}
+      <div class="custom-file fileInputProfileWrap">
+          <input type="file" formControlName="ExhibitionPicture3"  (change)="fileChangeEvent3($event)" class="fileInputProfile">
+          <div class="img-space">
+
+              <ng-container *ngIf="isImageSaved3; else elseTemplate">
+                  <img [src]="cardImageBase643"  height="200"/>
+              </ng-container>
+              <ng-template #elseTemplate>
+
+                  <img src="./../../assets/placeholder.png" class="img-responsive">
+              </ng-template>
+
+          </div>
+
+      </div>
+      <div class="error-messages">
+        <ng-container *ngFor="let error of error_messages.ExhibitionPicture3">
+          <div class="error-message" *ngIf=" exhibitionApplicationForm.get('ExhibitionPicture3').hasError(error.type) &&
+             (exhibitionApplicationForm.get('ExhibitionPicture3').dirty || exhibitionApplicationForm.get('ExhibitionPicture3').touched)">
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+  </fieldset>
+  <a class="btn btn-danger" (click)="removeImage3()" *ngIf="isImageSaved3">Remove</a>
+</div>
+
+      <br>
+      <br>
+      <div>
+        <hr>
+        <button type="button" style="width: 200px" (click)="onApply(applyExhibitionModal)"
+          class="btn btn-primary">Apply</button>
+      </div>
+      
+    </div>
+
+
+    <!-- ==================================================================================== -->
+    <!-- =====================================================MODALS BELOW============================================ -->
+    <ng-template #applyExhibitionModal let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title">Confirm Exhibition Application</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to submit application details?</p>
+      </div>
+      <div class="modal-footer">
+        <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right"
+          (click)="modal.dismiss('Cross click')" mdbWavesEffect>
+          No
+        </button>
+        <button mdbBtn type="button" gradient="purple" (click)="submitApplication(applyExhibitionModal,event)"
+          rounded="true" mdbWavesEffect>
+          Submit
+        </button>
+      </div>
+    </ng-template>
+  </div>
+
+
+  <ng-template #cancelApplicationModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Cancel Application</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to cancel application process?</p>
+    </div>
+    <div class="modal-footer">
+      <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right"
+        (click)="modal.dismiss('Cross click')" mdbWavesEffect>
+        No
+      </button>
+      <button mdbBtn type="button" gradient="purple" (click)="yesCancel(cancelApplicationModal)" rounded="true"
+        mdbWavesEffect>
+        Yes
+      </button>
+    </div>
+  </ng-template>
+</form>

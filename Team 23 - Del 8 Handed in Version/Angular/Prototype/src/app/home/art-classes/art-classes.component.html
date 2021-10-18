@@ -1,0 +1,46 @@
+<div class="page-padding">
+  <div class="container">
+    <img
+      src="../../../assets/art-class/art-class-poster.png"
+      alt=""
+      style="width: 900px; height: 300px"
+    />
+    <div class="top-right"><h1>Art Classes</h1></div>
+  </div>
+  <hr />
+  <h2>Available Classes</h2>
+  <hr />
+
+  <div class="card-deck">
+    <div
+      class="col-4"
+      *ngFor="let artclass of listArtClasses; let indexofElementc = index"
+    >
+      <div class="card">
+        <img
+          class="card-img-top"
+          src="{{ artclass.artClassImage }}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h2 class="card-title">{{ artclass.artClassName }}</h2>
+          <p class="card-text">{{ artclass.artClassDescription }}.</p>
+          <button
+            mdbBtn
+            type="submit"
+            gradient="aqua"
+            (click)="getArtClass(artclass)"
+            rounded="true"
+            mdbWavesEffect
+          >
+            View Class
+          </button>
+        </div>
+        <!-- <div class="card-footer">
+        <p>{{ artClass.artClassStartDateTime | date: "fullDate" }}</p>
+      </div> -->
+      </div>
+      <br />
+    </div>
+  </div>
+</div>

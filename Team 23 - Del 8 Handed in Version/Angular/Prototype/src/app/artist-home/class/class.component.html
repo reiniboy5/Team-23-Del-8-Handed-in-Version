@@ -1,0 +1,60 @@
+<div class="page-padding">
+<div class="row">
+    <div class="col">
+    <h1>Conflict and Adversity</h1>
+</div>
+<div class="col">
+    <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right;" [routerLink]="['../classes']"  mdbWavesEffect>Back</button>
+</div>
+</div>
+<div class="row">
+    <div class="col">
+<img class="card-img-top" src="../../../assets/art-class/theme1.png" alt="Card image cap">
+</div>
+
+<div class="col-8">
+    <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p>Class Type: Oil painting</p>
+    <p>Teacher: Koos Bronkhorst</p>
+    <p>Start-Date: 15 May 2020</p>
+    <p>End-Date: 18 May 2020</p>
+    <P>Time: 08:00 - 16:00</P>
+    <p>Venue: Johann Van Heerden Art Gallery</p>
+    <p>Seats Open: 6</p>
+    <p>R 750.00 pp</p>
+    <hr>
+    <p><small>* Refunds for a class is only available until 2 days before the class starts.</small></p>
+    <button mdbBtn type="button" gradient="purple" rounded="true" (click)="onArtistBooking(artistBookModal)" mdbWavesEffect>Book Class</button>
+    <!-- <button mdbBtn type="button" gradient="blue" rounded="true" mdbWavesEffect>Teacher Details</button> -->
+</div>
+</div>
+
+
+<!-- ==================================================================================== -->
+<!-- =====================================================MODALS BELOW============================================ -->
+<ng-template #artistBookModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Confirm Artist Booking</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col">
+          <h4>Pay now?</h4>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-success" (click)="submitArtistBooking(artistBookModal)">Make Payment</button>
+        </div>
+      </div>
+      <br>
+      
+      <p>*Reminder: You can only confirm seat with payment. Only booking you will be required to pay within 48 hours.</p>
+    </div>
+    <div class="modal-footer">
+      <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right;" (click)="modal.dismiss('Cross click')"  mdbWavesEffect>Cancel</button>
+      <button mdbBtn type="button" gradient="purple" (click)="submitArtistBooking(artistBookModal)" rounded="true" mdbWavesEffect>Only Book</button>
+    </div>
+  </ng-template>
+</div>

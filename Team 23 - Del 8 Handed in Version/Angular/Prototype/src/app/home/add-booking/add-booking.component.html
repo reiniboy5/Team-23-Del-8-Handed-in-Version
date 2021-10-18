@@ -1,0 +1,17 @@
+<form  [formGroup]="" (ngSubmit)="onSubmit($event)">
+    <div class="container">
+        <div class="row">
+            <label>Enter Booking Date and Time:</label>
+            <input type="text" formControlName="BookingDateTime" class="form-control" style="width: 250px;"
+              placeholder="Enter Date and Time">
+        </div>
+
+        <div class="row">
+            <label>Booking Status:</label>
+            <input type="text" formControlName="BookingStatus" class="form-control" style="width: 250px;"
+              placeholder="Enter Status">
+        </div>
+        <button mdbBtn type="submit" (click)="onSubmit($event)" gradient="blue" rounded="true"
+        mdbWavesEffect>Add Booking</button>
+    </div>
+</form>

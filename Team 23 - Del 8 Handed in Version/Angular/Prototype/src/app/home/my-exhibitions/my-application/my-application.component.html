@@ -1,0 +1,43 @@
+
+<ng-container >
+
+<html >
+
+<body>
+    <div>
+ <h1 style="margin-left: 5%">Application for {{selectedApplication.exhibition.exhibitionName}}</h1>
+    
+ <div class="col">
+    <button mdbBtn type="button" gradient="peach" rounded="true" style="float: right;"
+      [routerLink]="['../applications']" mdbWavesEffect>Back</button>
+  </div>
+</div>
+   <div class="row">
+
+        <div class="card" style="width: 300px;height: 300px;margin-left: 5%;">
+            <img src='{{selectedApplication.exhibitionApplicationImage1}}'style="width:300px;height: 300px;" class="card-img-top"
+                alt="...">
+         
+            <br>
+        </div>
+        <div class="card" style="width: 300px;height: 300px;; margin-left: 5%;">
+            <img src='{{selectedApplication.exhibitionApplicationImage2}}' style="width:300px;height: 300px;" class="card-img-top"
+                alt="...">
+         
+        </div>
+        <div class="card" style="width:300px;height: 300px; margin-left: 5%;">
+            <img src='{{selectedApplication.exhibitionApplicationImage3}}' style="width:300px;height: 300px;" class="card-img-top"
+                alt="...">
+       
+        </div>
+
+    </div>
+    <br>
+    <p><b>Application Description</b></p>
+
+<p>{{selectedApplication.applicationDescription}}</p>
+</body>
+
+</html>
+
+</ng-container>

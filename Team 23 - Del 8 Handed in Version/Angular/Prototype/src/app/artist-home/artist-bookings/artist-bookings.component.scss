@@ -1,0 +1,19 @@
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 150px;
+  }
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+h1 {
+    margin: 0; 
+    font-family: 'Leckerli One', cursive;
+    text-shadow: 0 2px rgba(0,0,0,.5);
+  }
+
+  button {
+    border-radius: 10px;
+}

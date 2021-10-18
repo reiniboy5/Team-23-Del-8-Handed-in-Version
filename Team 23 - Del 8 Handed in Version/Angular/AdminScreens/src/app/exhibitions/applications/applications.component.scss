@@ -1,0 +1,41 @@
+h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.application-image {
+  width: 300px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// .artwork-img{
+//     width: 400px;
+//     padding-left: 10px;
+//     padding-right: 10px;
+//     padding-top: 5px;
+//     padding-bottom: 5px;
+// }
+
+.artwork-img {
+  background-position: center-top;
+  width: 100%; // any width
+  height: 230px; // any height
+}
+
+.artwork-pictures {
+  text-align: center;
+}
+
+.exhibition-applications {
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+
+button {
+  border-radius: 20px;
+}

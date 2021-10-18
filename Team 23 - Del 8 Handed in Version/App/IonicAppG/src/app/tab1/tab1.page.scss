@@ -1,0 +1,30 @@
+.welcome-card ion-img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+
+.social-network {
+  margin-top: 60px;
+}
+
+.social-network ul li {
+  margin: 0 3px;
+}
+
+.social-network ul li a {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+
+ .social-network ul li a:hover {
+  background-color: #fff;
+  color: #2279BD;
+}

@@ -1,0 +1,195 @@
+<div class="container">
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" #sidenav opened [hidden]="!service.userLoggedIn">
+      <img src="assets/logo/artech.png" alt="logo" class="logo" />
+
+      <mat-list role="list" class="nav-button" class="background">
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><button class="btn btn-primary" [routerLink]="['/home']">
+            Home
+          </button></mat-list-item
+        >
+
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><button [routerLink]="['/announcement']" class="btn btn-primary">
+            Announcements
+          </button></mat-list-item
+        >
+
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><button
+            class="btn btn-primary"
+            href="/classes"
+            [matMenuTriggerFor]="exhibitionsMenu"
+          >
+            Exhibitions <i class="fas fa-caret-down"></i>
+          </button>
+          <mat-menu #exhibitionsMenu="matMenu" xPosition="after">
+            <button
+              mat-button
+              class="menuButton"
+              [routerLink]="['/exhibitions']"
+            >
+              Exhibitions
+            </button>
+            <!-- <button
+              mat-button
+              class="menuButton"
+              [routerLink]="['/invitations']"
+            >
+              Invitations
+            </button> -->
+          </mat-menu>
+        </mat-list-item>
+
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><button
+            class="btn btn-primary"
+            href="/classes"
+            [matMenuTriggerFor]="artClassMenu"
+          >
+            Art Classes <i class="fas fa-caret-down"></i>
+          </button>
+          <mat-menu #artClassMenu="matMenu" xPosition="after">
+            <button
+              mat-button
+              class="menuButton"
+              [routerLink]="['/view-teachers']"
+            >
+              Teachers
+            </button>
+            <button mat-button class="menuButton" [routerLink]="['/classes']">
+              Art Classes
+            </button>
+            <button mat-button class="menuButton" [routerLink]="['/refunds']">
+              Refunds
+            </button>
+          </mat-menu>
+        </mat-list-item>
+
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><button
+            class="btn btn-primary"
+            href="/classes"
+            [matMenuTriggerFor]="scheduleMenu"
+          >
+            Schedule <i class="fas fa-caret-down"></i>
+          </button>
+          <mat-menu #scheduleMenu="matMenu" xPosition="after">
+            <button
+              mat-button
+              class="menuButton"
+              [routerLink]="['/schedule-exhibitions']"
+            >
+              Exhibitions
+            </button>
+            <button
+              mat-button
+              class="menuButton"
+              [routerLink]="['/schedule-classes']"
+            >
+              Art Classes
+            </button>
+          </mat-menu>
+        </mat-list-item>
+        <!-- <mat-list-item role="listitem" class="sideNavButton"><button class="btn btn-primary" >Artworks</button></mat-list-item> -->
+
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><button class="btn btn-primary" [routerLink]="['/artwork']">
+            Artworks
+          </button>
+        </mat-list-item>
+
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><button class="btn btn-primary" [routerLink]="['/artists']">
+            Artist
+          </button>
+        </mat-list-item>
+
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><button [routerLink]="['/mediums']" class="btn btn-primary">
+            Medium types
+          </button></mat-list-item
+        >
+
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><button [routerLink]="['/surfaces']" class="btn btn-primary">
+            Surface Types
+          </button></mat-list-item
+        >
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><button [routerLink]="['/location']" class="btn btn-primary">
+            Location Data
+          </button></mat-list-item
+        >
+
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><button [routerLink]="['/timer']" class="btn btn-primary">
+            Timer
+          </button></mat-list-item
+        >
+
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><button [matMenuTriggerFor]="reportsMenu" class="btn btn-primary">
+            Reports <i class="fas fa-caret-down"></i>
+          </button>
+          <mat-menu #reportsMenu="matMenu" xPosition="after">
+            <button
+              mat-button
+              class="menuButton"
+              [routerLink]="['/user-report']"
+            >
+              New User Report
+            </button>
+            <button
+              mat-button
+              class="menuButton"
+              [routerLink]="['/class-report']"
+            >
+              Art Class Report
+            </button>
+            <button
+              mat-button
+              class="menuButton"
+              [routerLink]="['/teacher-report']"
+            >
+              Booking Report
+            </button>
+            <button
+              mat-button
+              class="menuButton"
+              [routerLink]="['/exhibition-report']"
+            >
+              Exhibition Report
+            </button>
+            <button
+              mat-button
+              class="menuButton"
+              [routerLink]="['/feedback-report']"
+            >
+              Feedback Report
+            </button>
+          </mat-menu>
+        </mat-list-item>
+
+        <mat-list-item role="listitem" class="sideNavButton"
+          ><a
+            class="btn btn-primary"
+            href="https://gamu-gusto.github.io/Artech-Help-Page/"
+            target="_blank"
+          >
+            Help
+          </a></mat-list-item
+        >
+      </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-navbar></app-navbar>
+      <br />
+      <div style="padding-left: 50px">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<br />

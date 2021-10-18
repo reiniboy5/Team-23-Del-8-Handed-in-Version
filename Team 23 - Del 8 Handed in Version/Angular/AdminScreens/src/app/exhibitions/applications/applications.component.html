@@ -1,0 +1,143 @@
+<div class="container">
+  <div class="exhibition-applications">
+    <div class="row">
+      <h1>Exhibition Applications</h1>
+    </div>
+    <hr />
+    <h2>{{ exhibitionService.selectedExhibition.exhibitionName }}</h2>
+    <br />
+
+    <br />
+    <div *ngFor="let item of exhibitionApplicationList">
+      <div class="card" *ngIf="item.applicationStatus.applicationStatusID == 1">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">
+              {{ item.user.userFirstName }} {{ item.user.userLastName }}
+            </div>
+            <div class="col" style="float: right">
+              <button
+                type="button"
+                class="btn btn-danger"
+                style="float: right"
+                (click)="
+                  onDecline(declineModal); storeID(item.exhibitionApplicationID)
+                "
+              >
+                Decline <i class="fas fa-ban"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-success"
+                style="float: right; margin-right: 20px"
+                (click)="
+                  onAccept(acceptModal); storeID(item.exhibitionApplicationID)
+                "
+              >
+                Accept <i class="fas fa-check"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Motivation: {{ item.applicationDescription }}</p>
+        </div>
+        <hr />
+        <div class="artwork-pictures">
+          <div class="row">
+            <div class="col">
+              <img
+                src="{{ item.exhibitionApplicationImage1 }}"
+                alt="Picture1"
+                class="artwork-img"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="{{ item.exhibitionApplicationImage2 }}"
+                alt="Picture2"
+                class="artwork-img"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="{{ item.exhibitionApplicationImage3 }}"
+                alt="Picture3"
+                class="artwork-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- =========MODALS BELOW======================= -->
+
+<ng-template #acceptModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Accept Application</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to Accept this Application?</p>
+  </div>
+  <br />
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.dismiss('Cross click')"
+    >
+      No
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="confirmAccept(acceptModal)"
+    >
+      Yes
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #declineModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Decline Application</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to Decline this Application?</p>
+  </div>
+  <br />
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.dismiss('Cross click')"
+    >
+      No
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="confirmDecline(declineModal)"
+    >
+      Yes
+    </button>
+  </div>
+</ng-template>

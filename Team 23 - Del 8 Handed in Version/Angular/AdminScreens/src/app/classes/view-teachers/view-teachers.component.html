@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="row">
+    <h1>Teachers</h1>
+  </div>
+  <label>Search Teacher: (Search Criteria: First Name)</label>
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search"
+    [(ngModel)]="searchValue"
+  />
+  <br />
+  <div class="row">
+    <button
+      type="button"
+      class="btn btn-primary"
+      [routerLink]="['/add-teacher']"
+    >
+      Add Teacher <i class="fas fa-plus"></i>
+    </button>
+  </div>
+  <hr />
+
+  <div class="row"></div>
+  <table class="table">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Name</th>
+        <th scope="col">Email Address</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Type</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let item of teacherService.teacherList | searchfilter: searchValue
+        "
+      >
+        <td>{{ item.teacherName }} {{ item.teacherSurname }}</td>
+        <td>{{ item.teacherEmail }}</td>
+        <td>0{{ item.teacherPhoneNumber }}</td>
+        <td>{{ item.teacherType.teacherTypeDescription }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-success"
+            [routerLink]="['/update-teacher']"
+            (click)="onEditTeacher(item)"
+          >
+            Edit <i class="fas fa-edit"></i>
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="onDeleteTeacher(deleteTeacherModal)"
+          >
+            Delete <i class="fas fa-trash"></i>
+          </button>
+        </td>
+
+        <ng-template #deleteTeacherModal let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title">Delete Teacher</h4>
+            <button
+              type="button"
+              class="close"
+              aria-label="Close"
+              (click)="modal.dismiss('Cross click')"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete this class Teacher?</p>
+          </div>
+          <br />
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="modal.dismiss('Cross click')"
+            >
+              No
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="confirmDelete(item.classTeacherID)"
+            >
+              Yes
+            </button>
+          </div>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+</div>
+
+<!-- <ng-template #deleteTeacherModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Delete Teacher</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+      <p>Are you sure you want to delete this class Teacher?</p>
+    </div>
+    <br>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">No</button>
+    <button type="button" class="btn btn-primary" (click)="confirmDelete(deleteTeacherModal)">Yes</button>
+  </div>
+</ng-template> -->

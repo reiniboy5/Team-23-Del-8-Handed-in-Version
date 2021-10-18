@@ -1,0 +1,142 @@
+<div class="page-padding">
+    <br>
+    <div class="row">
+      <div class="col">
+        <h1>Exhibition Application</h1>
+
+      </div>
+      <div class="col" style="float: right;">
+        <button
+      mdbBtn
+      type="button"
+      gradient="peach"
+      rounded="true"
+      style="float: right"
+      (click)="cancelApplication(cancelApplicationModal)"
+      mdbWavesEffect
+    >
+      Back
+    </button>
+      </div>
+    </div>
+    <hr>
+<div class="form-group">
+    <label for="comment">Provide your motivaiton to take part in this exhibition:</label>
+    <textarea class="form-control" rows="5" id="comment"></textarea>
+  </div>
+  <p>Provide 3 pictures of your artwork</p>
+  <div class="row">
+      <div class="col">
+          <div class="row">
+            <button type="button" style="width: 200px" class="btn btn-secondary">Upload Picture <i class="fas fa-plus"></i></button>
+          </div>
+          <br>
+          <img class="card-img-top" src="../../../assets/exhibitions/pic.png" alt="Card image cap">
+      </div>
+      <br>
+      <div class="col">
+        <div class="row">
+            <button type="button" style="width: 200px" class="btn btn-secondary">Upload Picture <i class="fas fa-plus"></i></button>
+          </div>
+          <br>
+          <img class="card-img-top" src="../../../assets/exhibitions/pic.png" alt="Card image cap">    </div>
+    <div class="col">
+        <div class="row">
+            <button type="button" style="width: 200px" class="btn btn-secondary">Upload Picture <i class="fas fa-plus"></i></button>
+          </div>
+          <br>
+          <img class="card-img-top" src="../../../assets/exhibitions/pic.png" alt="Card image cap">    
+  </div>
+
+  <br>
+  <br>
+  <div>
+  <hr>
+  <button type="button" style="width: 200px" (click)="onApply(applyExhibitionModal)" class="btn btn-primary">Apply</button>
+</div>
+</div>
+
+
+<!-- ==================================================================================== -->
+<!-- =====================================================MODALS BELOW============================================ -->
+<ng-template #applyExhibitionModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Confirm Exhibition Application</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to submit application details?</p>
+    </div>
+    <div class="modal-footer">
+      <button
+      mdbBtn
+      type="button"
+      gradient="peach"
+      rounded="true"
+      style="float: right"
+      (click)="modal.dismiss('Cross click')"
+      mdbWavesEffect
+    >
+      No
+    </button>
+      <button
+        mdbBtn
+        type="button"
+        gradient="purple"
+        (click)="submitApplication(applyExhibitionModal)"
+        rounded="true"
+        mdbWavesEffect
+      >
+        Submit
+      </button>
+    </div>
+  </ng-template>
+  </div>
+
+
+  <ng-template #cancelApplicationModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Cancel Application</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to cancel application process?</p>
+    </div>
+    <div class="modal-footer">
+      <button
+      mdbBtn
+      type="button"
+      gradient="peach"
+      rounded="true"
+      style="float: right"
+      (click)="modal.dismiss('Cross click')"
+      mdbWavesEffect
+    >
+      No
+    </button>
+      <button
+        mdbBtn
+        type="button"
+        gradient="purple"
+        (click)="yesCancel(cancelApplicationModal)"
+        rounded="true"
+        mdbWavesEffect
+      >
+        Yes
+      </button>
+    </div>
+  </ng-template>

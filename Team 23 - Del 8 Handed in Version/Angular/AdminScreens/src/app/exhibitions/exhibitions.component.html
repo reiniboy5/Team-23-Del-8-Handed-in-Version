@@ -1,0 +1,273 @@
+<div class="container">
+  <h1>Exhibitions</h1>
+  <hr />
+  <div class="row">
+    <div class="col">
+      <label
+        >Search Exhibntion: (Search exhibition by the following criteria:
+        Title)</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search"
+        [(ngModel)]="searchValue"
+      />
+      <br />
+      <button
+        type="button"
+        class="btn btn-primary"
+        [routerLink]="['/new-exhibition']"
+      >
+        New Exhibtion <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col">
+      <!-- <mat-card class="exhibition-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"><img src="assets/logo/artech.png" alt="logo" class="logo"/></div>
+          <mat-card-title>{{item.exhibitionName}}</mat-card-title>
+          <mat-card-subtitle>{{item.exhibitionType.exhibitionTypeDecription}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{item.exhibitionImage}}" class="exhibition-image" alt="exhibiton">
+        <mat-card-content>
+          <p>
+            {{item.exhibitionDescription}}
+          </p>
+          <mat-list role="list">
+            <mat-list-item role="listitem"> Starting: {{item.exhibitionStartDateTime | date:'mediumDate'}} at {{item.exhibitionStartDateTime | date:'shortTime'}}</mat-list-item>
+            <mat-list-item role="listitem">Ends: {{item.exhibitionEndDateTime | date:'mediumDate'}} at {{item.exhibitionEndDateTime | date:'shortTime'}}</mat-list-item>
+            <mat-list-item role="listitem">{{item.venue.venueDescription}}</mat-list-item>
+          </mat-list>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="row">
+            <button type="button" class="btn btn-success" [routerLink]="['/update-exhibition']" (click)="onEditExhibition(item)">Update <i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-secondary" style="margin-left: 10px;" [routerLink]="['/delete-user']">Participants</button>
+        </div>
+        <br>
+        <div class="row">
+            <button type="button" class="btn btn-info" [routerLink]="['/tags']">View Tags</button>
+            <button type="button" class="btn btn-light" style="margin-left: 10px;" [routerLink]="['/applications']">View Applications</button>
+        </div>
+        </mat-card-actions>
+        <button type="button" class="btn btn-danger" style="width: 100%" (click)="onDeleteExhibition(deleteExhibitionModal)">Delete <i class="fas fa-trash"></i></button>
+      </mat-card>
+    </div> -->
+      <br />
+
+      <!-- Bootstrap CARD -->
+
+      <div class="card-deck">
+        <div
+          class="col-4"
+          *ngFor="
+            let item of exhibitionService.exhibitionList
+              | exhibitionsearch: searchValue
+          "
+        >
+          <div class="card">
+            <img
+              class="exhibition-image"
+              src="{{ item.exhibitionImage }}"
+              alt="Exhibition image"
+            />
+            <div class="card-body">
+              <h2 class="card-title">Title: {{ item.exhibitionName }}</h2>
+              <p class="card-text">
+                Type: {{ item.exhibitionType.exhibitionTypeDecription }}
+              </p>
+              <p class="card-text">Desc: {{ item.exhibitionDescription }}</p>
+
+              <li class="list-group-item">
+                Starting:
+                {{ item.exhibitionStartDateTime | date: "mediumDate" }} at
+                {{ item.exhibitionStartDateTime | date: "shortTime" }}
+              </li>
+              <li class="list-group-item">
+                Ends: {{ item.exhibitionEndDateTime | date: "mediumDate" }} at
+                {{ item.exhibitionEndDateTime | date: "shortTime" }}
+              </li>
+              <li class="list-group-item">
+                Venue: {{ item.venue.venueDescription }}
+              </li>
+
+              <p class="card-text"></p>
+              <div class="row">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  [routerLink]="['/update-exhibition']"
+                  (click)="onEditExhibition(item)"
+                >
+                  Update <i class="fas fa-edit"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  style="margin-left: 10px"
+                  [routerLink]="['/delete-user']"
+                  (click)="onClickParticipants(item.exhibitionID, item)"
+                >
+                  Participants
+                </button>
+              </div>
+              <br />
+              <div class="row">
+                <button
+                  type="button"
+                  class="btn btn-info"
+                  [routerLink]="['/tags']"
+                  (click)="onClickTags(item.exhibitionID, item)"
+                >
+                  View Tags
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light"
+                  style="margin-left: 10px"
+                  [routerLink]="['/applications']"
+                  (click)="onClickApplication(item.exhibitionID, item)"
+                >
+                  View Applications
+                </button>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn btn-danger"
+              style="width: 100%"
+              (click)="onDeleteExhibition(deleteExhibitionModal)"
+            >
+              Delete <i class="fas fa-trash"></i>
+            </button>
+          </div>
+          <ng-template #deleteExhibitionModal let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title">Delete Exhibition</h4>
+              <button
+                type="button"
+                class="close"
+                aria-label="Close"
+                (click)="modal.dismiss('Cross click')"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to delete this Exhibition?</p>
+            </div>
+            <br />
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="modal.dismiss('Cross click')"
+              >
+                No
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="confirmDeleteExhibition(item.exhibitionID)"
+              >
+                Yes
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+
+      <!-- Boostrap CARD Above -->
+    </div>
+  </div>
+
+  <!-- 
+<div class="col-sm">
+      <mat-card class="exhibition-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Greek Myths</mat-card-title>
+          <mat-card-subtitle>Old School Drawing (Type)</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="./../assets/exhibitions/theme2.png" class="exhibition-image" alt="exhibiton">
+        <mat-card-content>
+          <p>
+            THis will be the Exhibition Description
+          </p>
+          <mat-list role="list">
+            <mat-list-item role="listitem">08:00 AM</mat-list-item>
+            <mat-list-item role="listitem">Area 69</mat-list-item>
+            <mat-list-item role="listitem">3 August 2021</mat-list-item>
+          </mat-list>
+        </mat-card-content>
+        <mat-card-actions style="margin-left: 10px;">
+            <div class="row" >
+            <button type="button" class="btn btn-success" [routerLink]="['/update-exhibition']">Update <i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-secondary" style="margin-left: 10px;" [routerLink]="['/delete-user']">Participants</button>
+        </div>
+        <br>
+        <div class="row">
+            <button type="button" class="btn btn-info" [routerLink]="['/tags']">View Tags</button>
+            <button type="button" class="btn btn-light" style="margin-left: 10px;" [routerLink]="['/applications']">View Applications</button>
+        </div>
+        </mat-card-actions>
+        <button type="button" class="btn btn-danger" style="width: 100%" (click)="onDeleteExhibition(deleteExhibitionModal)">Delete <i class="fas fa-trash"></i></button>
+      </mat-card>
+    </div>
+
+    <div class="col-sm">
+        <mat-card class="exhibition-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Optic Illusions</mat-card-title>
+            <mat-card-subtitle>Black and White Display (Type)</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/exhibitions/theme3.png" class="exhibition-image" alt="exhibiton">
+          <mat-card-content>
+            <p>
+              THis will be the Exhibition Description
+            </p>
+            <mat-list role="list">
+              <mat-list-item role="listitem">10:00 AM</mat-list-item>
+              <mat-list-item role="listitem">Area 12</mat-list-item>
+              <mat-list-item role="listitem">16 October 2021</mat-list-item>
+            </mat-list>
+          </mat-card-content>
+          <mat-card-actions>
+              <div class="row">
+              <button type="button" class="btn btn-success" [routerLink]="['/update-exhibition']">Update <i class="fas fa-edit"></i></button>
+              <button type="button" class="btn btn-secondary" style="margin-left: 10px;" [routerLink]="['/delete-user']">Participants</button>
+          </div>
+          <br>
+          <div class="row">
+              <button type="button" class="btn btn-info" [routerLink]="['/tags']">View Tags</button>
+              <button type="button" class="btn btn-light" style="margin-left: 10px;" [routerLink]="['/applications']">View Applications</button>
+          </div>
+          </mat-card-actions>
+          <button type="button" class="btn btn-danger" style="width: 100%" (click)="onDeleteExhibition(deleteExhibitionModal)">Delete <i class="fas fa-trash"></i></button>
+        </mat-card>
+      </div> -->
+
+  <!-- =========MODALS BELOW======================= -->
+
+  <!-- <ng-template #deleteExhibitionModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Delete Exhibition</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+    <p>Are you sure you want to delete this Exhibition?</p>
+    </div>
+    <br>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">No</button>
+    <button type="button" class="btn btn-primary" (click)="confirmDeleteExhibition()">Yes</button>
+  </div>
+</ng-template> -->
+</div>

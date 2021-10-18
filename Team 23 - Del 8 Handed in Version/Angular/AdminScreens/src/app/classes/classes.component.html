@@ -1,0 +1,263 @@
+<div class="container">
+  <h1>Art Classes</h1>
+  <hr />
+  <div class="row">
+    <div class="col">
+      <label
+        >Search Class: (Search class by the following criteria: Title.)</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search"
+        [(ngModel)]="searchValue"
+      />
+      <!-- <p><small>No searches found</small></p> -->
+      <br />
+
+      <br />
+      <button
+        type="button"
+        class="btn btn-primary"
+        [routerLink]="['/new-class']"
+      >
+        New Class <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-sm">
+      <!-- <mat-card class="artClass-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ item.artClassName }}</mat-card-title>
+          <mat-card-subtitle>by Koos Smit</mat-card-subtitle>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="{{ item.artClassImage }}"
+          class="exhibition-image"
+          alt="exhibiton"
+        />
+        <mat-card-content>
+          <p>
+            {{ item.artClassDescription }}
+          </p>
+          <mat-list role="list">
+            <div class="row">
+              <div class="col">
+                <mat-list-item role="listitem"
+                  >Start-Date: {{ item.artClassStartDateTime }}</mat-list-item
+                >
+                <mat-list-item role="listitem"
+                  >End-Date: {{ item.artClassEndDateTime }}</mat-list-item
+                >
+                <mat-list-item role="listitem"
+                  >R {{ item.classPrice }}</mat-list-item
+                >
+                <mat-list-item role="listitem">{{
+                  item.venue.venueDescription
+                }}</mat-list-item>
+              </div>
+              <div class="col">
+                <mat-list-item role="listitem"
+                  >Limit: {{ item.classLimit }}</mat-list-item
+                >
+                <mat-list-item role="listitem"
+                  >Refund day limit:
+                  {{ item.refundDayLimit }} days</mat-list-item
+                >
+                <mat-list-item role="listitem"
+                  >Payment Reminder: 2021/05/05</mat-list-item
+                >
+              </div>
+            </div>
+          </mat-list>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row">
+            <button
+              type="button"
+              class="btn btn-success"
+              [routerLink]="['/update-class']"
+              (click)="onEditArtClass(item)"
+            >
+              Update <i class="fas fa-edit"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              style="margin-left: 10px"
+              (click)="onDeleteClass(deleteClassModal)"
+            >
+              Delete <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </mat-card-actions>
+      </mat-card> -->
+      <br />
+
+      <!-- Bootstrap CARD -->
+
+      <div class="card-deck">
+        <div
+          class="col-4"
+          *ngFor="
+            let item of artClassService.artClassList
+              | artClassSearch: searchValue
+          "
+        >
+          <div class="card">
+            <img
+              class="class-image"
+              src="{{ item.artClassImage }}"
+              alt="Exhibition image"
+            />
+            <div class="card-body">
+              <h2 class="card-title">Title: {{ item.artClassName }}</h2>
+              <p class="card-text">
+                By: {{ item.classTeacher.teacherName }}
+                {{ item.classTeacher.teacherSurname }}
+              </p>
+              <p class="card-text">
+                Type: {{ item.artClassType.artClassTypeDescription }}
+              </p>
+              <p class="card-text">Desc: {{ item.artClassDescription }}</p>
+
+              <li class="list-group-item">
+                Starting:
+                {{ item.artClassStartDateTime | date: "mediumDate" }} at
+                {{ item.artClassStartDateTime | date: "shortTime" }}
+              </li>
+              <li class="list-group-item">
+                Ends: {{ item.artClassEndDateTime | date: "mediumDate" }} at
+                {{ item.artClassEndDateTime | date: "shortTime" }}
+              </li>
+              <li class="list-group-item">
+                Venue: {{ item.venue.venueDescription }}
+              </li>
+              <li class="list-group-item">Venue: R {{ item.classPrice }}</li>
+              <li class="list-group-item">Limit: {{ item.classLimit }}</li>
+              <li class="list-group-item">
+                Refund day limit: {{ item.refundDayLimit }}
+              </li>
+
+              <p class="card-text"></p>
+              <div class="row">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  [routerLink]="['/update-class']"
+                  (click)="onEditArtClass(item)"
+                >
+                  Update <i class="fas fa-edit"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  style="margin-left: 10px"
+                  (click)="onDeleteClass(deleteClassModal)"
+                >
+                  Delete <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Boostrap CARD Above -->
+
+          <ng-template #deleteClassModal let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title">Delete Art Class</h4>
+              <button
+                type="button"
+                class="close"
+                aria-label="Close"
+                (click)="modal.dismiss('Cross click')"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to delete this Art Class?</p>
+            </div>
+            <br />
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="modal.dismiss('Cross click')"
+              >
+                No
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="confirmDeleteClass(item.artClassID)"
+              >
+                Yes
+              </button>
+            </div>
+          </ng-template>
+        </div>
+
+        <!-- <div class="col-sm">
+        <mat-card class="exhibition-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Comic Art</mat-card-title>
+            <mat-card-subtitle>by Stan Lee</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/classes/class3.png" class="exhibition-image" alt="exhibiton">
+          <mat-card-content>
+            <p>
+              THis will be the Exhibition Description
+            </p>
+            <mat-list role="list">
+              <div class="row">
+                <div class="col">
+              <mat-list-item role="listitem">Start-Date: 10 May 2021</mat-list-item>
+              <mat-list-item role="listitem">End-Date: 13 Ma 2021</mat-list-item>
+              <mat-list-item role="listitem">R 800.00</mat-list-item>
+              <mat-list-item role="listitem">Room 5</mat-list-item>
+            </div>
+              <div class="col">
+              <mat-list-item role="listitem">Limit: 8</mat-list-item>
+              <mat-list-item role="listitem">Refund day limit</mat-list-item>
+              <mat-list-item role="listitem">Payment Reminder: 2021/05/05</mat-list-item>
+            </div>
+            </div>
+            </mat-list>
+          </mat-card-content>
+          <mat-card-actions>
+              <div class="row">
+              <button type="button" class="btn btn-success" [routerLink]="['/update-exhibition']">Update <i class="fas fa-edit"></i></button>
+              <button type="button" class="btn btn-danger" style="margin-left: 10px;" (click)="onDeleteClass(deleteClassModal)">Delete <i class="fas fa-trash"></i></button>
+          </div>
+          </mat-card-actions>
+        </mat-card>
+      </div> -->
+      </div>
+    </div>
+
+    <!-- =========MODALS BELOW======================= -->
+
+    <!-- <ng-template #deleteClassModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Delete Art Class</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+    <p>Are you sure you want to delete this Art Class?</p>
+    </div>
+    <br>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">No</button>
+    <button type="button" class="btn btn-primary" (click)="confirmDeleteClass(deleteClassModal)">Yes</button>
+  </div>
+</ng-template> -->
+  </div>
+</div>

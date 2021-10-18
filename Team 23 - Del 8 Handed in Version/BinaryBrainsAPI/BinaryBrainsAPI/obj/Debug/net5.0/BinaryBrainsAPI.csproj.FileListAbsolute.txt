@@ -1,0 +1,204 @@
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\appsettings.Development.json
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\appsettings.json
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.exe
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.deps.json
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.runtimeconfig.json
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.runtimeconfig.dev.json
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\ref\BinaryBrainsAPI.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.pdb
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Humanizer.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.csproj.AssemblyReference.cache
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.AssemblyInfoInputs.cache
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.AssemblyInfo.cs
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.csproj.CoreCompileInputs.cache
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\staticwebassets\BinaryBrainsAPI.StaticWebAssets.Manifest.cache
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\staticwebassets\BinaryBrainsAPI.StaticWebAssets.xml
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\scopedcss\bundle\BinaryBrainsAPI.styles.css
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.RazorTargetAssemblyInfo.cache
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.csproj.CopyComplete
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\ref\BinaryBrainsAPI.dll
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.pdb
+C:\2021 Coding\370 PROJECT\API\FINAL\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.genruntimeconfig.cache
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\appsettings.json
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.exe
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.deps.json
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.runtimeconfig.json
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.runtimeconfig.dev.json
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\ref\BinaryBrainsAPI.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.pdb
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Humanizer.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.AssemblyInfoInputs.cache
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.AssemblyInfo.cs
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.csproj.CoreCompileInputs.cache
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\staticwebassets\BinaryBrainsAPI.StaticWebAssets.Manifest.cache
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\staticwebassets\BinaryBrainsAPI.StaticWebAssets.xml
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\scopedcss\bundle\BinaryBrainsAPI.styles.css
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.RazorTargetAssemblyInfo.cache
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.csproj.CopyComplete
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\ref\BinaryBrainsAPI.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.pdb
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.genruntimeconfig.cache
+C:\Users\ABSC612\source\repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.csproj.AssemblyReference.cache
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Web.Cors.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Owin.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Owin.Cors.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Owin.Security.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Owin.Security.OAuth.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Owin.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Web.Http.dll
+C:\Users\ABSC612\Source\Repos\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\appsettings.json
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.exe
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.deps.json
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.runtimeconfig.json
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.runtimeconfig.dev.json
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\ref\BinaryBrainsAPI.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\BinaryBrainsAPI.pdb
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Humanizer.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Web.Cors.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Web.Http.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Owin.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Owin.Cors.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Owin.Security.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Owin.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.AssemblyInfoInputs.cache
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.AssemblyInfo.cs
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.csproj.CoreCompileInputs.cache
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\staticwebassets\BinaryBrainsAPI.StaticWebAssets.Manifest.cache
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\staticwebassets\BinaryBrainsAPI.StaticWebAssets.xml
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\scopedcss\bundle\BinaryBrainsAPI.styles.css
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.csproj.CopyComplete
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\ref\BinaryBrainsAPI.dll
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.pdb
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.genruntimeconfig.cache
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\obj\Debug\net5.0\BinaryBrainsAPI.csproj.AssemblyReference.cache
+C:\Users\Reinhardt Smit\Source\Repos\Gamu-Gusto\Binary-Brains-Repository\Del 5\BinaryBrainsAPI\BinaryBrainsAPI\bin\Debug\net5.0\AuthorizeNet.dll

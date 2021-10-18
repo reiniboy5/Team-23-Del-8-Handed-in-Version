@@ -1,0 +1,42 @@
+.exhibition-image {
+  width: 70%;
+  height: 400px;
+}
+
+mat-card-image {
+  width: 100%;
+}
+
+.exhibition-card {
+  background: rgba(128, 128, 128, 0.445);
+  width: 400px;
+}
+
+mat-card-actions {
+  margin-left: 10px;
+}
+
+.logo {
+  width: 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  border-radius: 20px;
+}
+
+.card {
+  border-radius: 20px;
+}
+
+.card > img {
+  margin-bottom: 0.75rem;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}

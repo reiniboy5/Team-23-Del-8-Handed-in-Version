@@ -1,0 +1,349 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit($event)">
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col" style="background-color: black;">
+        <img src="../assets/logo/artech.png" class="logo" alt="user">
+      </div>
+
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <h3>Registration</h3>
+          </div>
+          <div class="col">
+            <button mdbBtn type="button" gradient="peach" (click)="cancelRegistration(cancelRegisterModal)"
+              style="float: right" rounded="true" mdbWavesEffect>Back</button>
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col">
+            <label>First Name</label>
+            <input type="text" formControlName="UserFirstName" class="form-control" style="width: 250px;"
+              placeholder="Enter Name" />
+            <div class="error-messages" *ngFor="let error of error_messages.UserFirstName">
+              <div style="position: static;" class="error-message" *ngIf=" registrationForm.get('UserFirstName').hasError(error.type) &&
+                 (registrationForm.get('UserFirstName').dirty || registrationForm.get('UserFirstName').touched)">
+                {{ error.message }}
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <label>Last Name</label>
+            <input type="text" formControlName="UserLastName" class="form-control" style="width: 250px;"
+              placeholder="Enter Surname" />
+            <div class="error-messages">
+              <ng-container *ngFor="let error of error_messages.UserLastName">
+                <div class="error-message" *ngIf=" registrationForm.get('UserLastName').hasError(error.type) &&
+                   (registrationForm.get('UserLastName').dirty || registrationForm.get('UserLastName').touched)">
+                  {{ error.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+
+        </div>
+
+        <br>
+
+        <div class="row">
+          <div class="col">
+            <label>Email Address</label>
+            <input type="email" formControlName="UserEmail" class="form-control" style="width: 250px;"
+              placeholder="E-mail" />
+            <div class="error-messages">
+              <ng-container *ngFor="let error of error_messages.UserEmail">
+                <div class="error-message" *ngIf=" registrationForm.get('UserEmail').hasError(error.type) &&
+                   (registrationForm.get('UserEmail').dirty || registrationForm.get('UserEmail').touched)">
+                  {{ error.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="col">
+            <label>Username</label>
+            <input type="text" formControlName="UserName" class="form-control" style="width: 250px;"
+              placeholder="Username" />
+            <div class="error-messages">
+              <ng-container *ngFor="let error of error_messages.UserName">
+                <div class="error-message" *ngIf=" registrationForm.get('UserName').hasError(error.type) &&
+                   (registrationForm.get('UserName').dirty || registrationForm.get('UserName').touched)">
+                  {{ error.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="col">
+            <label>User Date Of Birth</label>
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" formControlName="UserDOB" placeholder="yyyy-mm-dd" name="dp"
+                  [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" />
+                <div class="input-group-append">
+                  <i class="fa fa-calendar" style="font-size:48px;color:blue" (click)="d.toggle()" type="button"></i>
+                </div>
+                <div class="error-messages" *ngFor="let error of error_messages.UserDOB">
+                  <div style="position: static;" class="error-message" *ngIf=" registrationForm.get('UserDOB').hasError(error.type) &&
+                   (registrationForm.get('UserDOB').dirty || registrationForm.get('UserDOB').touched)">
+                    {{ error.message }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col">
+            <div>
+              <div class="form-group">
+                <label for="ScriptType" style="text-align:right;width: 150px ">User
+                  Type</label>
+                <select name="UserType" formControlName="UserTypeId" class="btn btn-outline-primary"
+                  (change)="selectInput($event)">
+                  <option value="undefined">Select User Type</option>
+                  <option *ngFor="let usertype of listUserTypes" [value]="usertype.userTypeID">
+                    {{usertype.userRoleName}}
+                  </option>
+                </select>
+                <div class="error-messages" *ngFor="let error of error_messages.UserTypeId">
+                  <div style="position: static;" class="error-message" *ngIf=" registrationForm.get('UserTypeId').hasError(error.type) &&
+                   (registrationForm.get('UserTypeId').dirty || registrationForm.get('UserTypeId').touched)">
+                    {{ error.message }}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col">
+
+            <div>
+              <label>Phone Number</label>
+              <input type="text" formControlName="UserPhoneNumber" class="form-control" style="width: 250px;"
+                placeholder="+ (27)" />
+              <div class="error-messages">
+                <ng-container *ngFor="let error of error_messages.UserPhoneNumber">
+                  <div class="error-message"
+                    *ngIf=" registrationForm.get('UserPhoneNumber').hasError(error.type) &&
+                     (registrationForm.get('UserPhoneNumber').dirty || registrationForm.get('UserPhoneNumber').touched)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+
+        <div class="row">
+          <div class="col">
+            <label>Password</label>
+            <input type="password" formControlName="UserPassword" class="form-control" style="width: 250px;"
+              placeholder="Password" />
+            <div class="error-messages">
+              <ng-container *ngFor="let error of error_messages.UserPassword">
+                <div class="error-message" *ngIf=" registrationForm.get('UserPassword').hasError(error.type) &&
+                   (registrationForm.get('UserPassword').dirty || registrationForm.get('UserPassword').touched)">
+                  {{ error.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="col">
+            <label>Confirm Password</label>
+            <input type="password" formControlName="UserPasswordConfirm" class="form-control" style="width: 250px;"
+              placeholder="Confirm Password" />
+            <div class="error-messages">
+              <ng-container *ngFor="let error of error_messages.UserPasswordConfirm">
+                <div class="error-message"
+                  *ngIf=" registrationForm.get('UserPasswordConfirm').hasError(error.type) &&
+                   (registrationForm.get('UserPasswordConfirm').dirty || registrationForm.get('UserPasswordConfirm').touched)">
+                  {{ error.message }}
+                </div>
+              </ng-container>
+
+              <ng-container>
+                <div class="error-message"
+                  *ngIf=" registrationForm.get('UserPasswordConfirm').hasError('notSame') &&
+                   (registrationForm.get('UserPasswordConfirm').dirty || registrationForm.get('UserPasswordConfirm').touched)">
+                  {{ error.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col">
+            <label>Country</label>
+            <select name="UserType" formControlName="CountryId" [(ngModel)]="SelCountryId" (change)="FillProvince();"class="btn btn-outline-primary">
+              <option value="undefined">Select Country</option>
+              <option *ngFor="let country of listCountries " [value]="country.countryID" rounded="true">
+                {{country.countryName}}
+              </option>
+            </select>
+            <div class="error-messages" *ngFor="let error of error_messages.CountryId">
+              <div style="position: static;" class="error-message" *ngIf=" registrationForm.get('CountryId').hasError(error.type) &&
+               (registrationForm.get('CountryId').dirty || registrationForm.get('CountryId').touched)">
+                {{ error.message }}
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <label>Province</label>
+            <select name="Province" formControlName="ProvinceId" [(ngModel)]="SelProvinceId" (change)="FillCity();"class="btn btn-outline-primary">
+              <option value="undefined">Select Province</option>
+              <option *ngFor="let province of listFilteredProvinces " [value]="province.provinceID">
+                {{province.provinceName}}
+              </option>
+            </select>
+            <div class="error-messages" *ngFor="let error of error_messages.ProvinceId">
+              <div style="position: static;" class="error-message" *ngIf=" registrationForm.get('ProvinceId').hasError(error.type) &&
+               (registrationForm.get('ProvinceId').dirty || registrationForm.get('ProvinceId').touched)">
+                {{ error.message }}
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <label>City</label>
+            <select name="City" formControlName="CityId" [(ngModel)]="SelCityId" (change)="FillSurburb();" class="btn btn-outline-primary">
+              <option value="undefined">Select City</option>
+              <option *ngFor="let city of listFilteredCities" [value]="city.cityID">
+                {{city.cityName}}
+              </option>
+            </select>
+            <div class="error-messages" *ngFor="let error of error_messages.CityId">
+              <div style="position: static;" class="error-message" *ngIf=" registrationForm.get('CityId').hasError(error.type) &&
+               (registrationForm.get('CityId').dirty || registrationForm.get('CityId').touched)">
+                {{ error.message }}
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <label>Surburb</label>
+            <select name="SurburbId" formControlName="SuburbId" class="btn btn-outline-primary">
+              <option value="undefined">Select Surburb</option>
+              <option *ngFor="let surburb of listFilteredSurburbs" [value]="surburb.suburbID">
+                {{surburb.suburbName}}
+              </option>
+            </select>
+            <div class="error-messages" *ngFor="let error of error_messages.SuburbId">
+              <div style="position: static;" class="error-message" *ngIf=" registrationForm.get('SuburbId').hasError(error.type) &&
+               (registrationForm.get('SuburbId').dirty || registrationForm.get('SuburbId').touched)">
+                {{ error.message }}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col" *ngIf="isNameSelected">
+            <label>Artist Bio</label>
+            <textarea type="text" formControlName="ArtistBio" class="form-control" style="width: 250px;"
+              placeholder="Artist Bio"></textarea>
+          </div>
+          <div class="col">
+            <label>Address Line 1</label>
+            <input type="text" formControlName="UserAddressLine1" class="form-control" style="width: 250px;"
+              placeholder="Address Line 1" />
+            <div class="error-messages">
+              <ng-container *ngFor="let error of error_messages.UserAddressLine1">
+                <div class="error-message"
+                  *ngIf=" registrationForm.get('UserAddressLine1').hasError(error.type) &&
+                   (registrationForm.get('UserAddressLine1').dirty || registrationForm.get('UserAddressLine1').touched)">
+                  {{ error.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="col">
+            <label>Address Line 2</label>
+            <input type="text" formControlName="UserAddressLine2" class="form-control" style="width: 250px;"
+              placeholder="Address Line 2" />
+          </div>
+          <div class="col">
+            <label>Postal Code</label>
+            <input type="text" formControlName="UserPostalCode" class="form-control" style="width: 250px;"
+              placeholder="Postal Code">
+            <div class="error-messages">
+              <ng-container *ngFor="let error of error_messages.UserPostalCode">
+                <div class="error-message" *ngIf=" registrationForm.get('UserPostalCode').hasError(error.type) &&
+                   (registrationForm.get('UserPostalCode').dirty || registrationForm.get('UserPostalCode').touched)">
+                  {{ error.message }}
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <br>
+
+
+
+        <button mdbBtn type="submit" (click)="onSubmit($event)" gradient="blue" rounded="true"
+          mdbWavesEffect>Register</button>
+        <!--<button mdbBtn type="button" gradient="purple" [routerLink]="['/register-artist']"  rounded="true" mdbWavesEffect>Next</button> -->
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================================ -->
+  <!-- ===============MODALS BELOW========================================================================================================== -->
+
+
+  <ng-template #registerModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Confirm Registration</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Do you want to confirm registration details?</p>
+    </div>
+    <div class="modal-footer">
+      <button mdbBtn type="button" gradient="peach" (click)="modal.dismiss('Cross click')" rounded="true"
+        mdbWavesEffect>No</button>
+      <button mdbBtn type="submit" gradient="purple" rounded="true" mdbWavesEffect>Confirm</button>
+    </div>
+  </ng-template>
+
+
+  <!-- ============================================================================ -->
+  <!-- ===============MODALS BELOW========================================================================================================== -->
+
+
+  <ng-template #cancelRegisterModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Cancel Registration</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to cancel the registration process?</p>
+    </div>
+    <div class="modal-footer">
+      <button mdbBtn type="button" gradient="peach" (click)="modal.dismiss('Cross click')" rounded="true"
+        mdbWavesEffect>No</button>
+      <button mdbBtn type="button" gradient="purple" (click)="yesCancel(cancelRegisterModal)" rounded="true"
+        mdbWavesEffect>Yes</button>
+    </div>
+  </ng-template>
+
+</form>

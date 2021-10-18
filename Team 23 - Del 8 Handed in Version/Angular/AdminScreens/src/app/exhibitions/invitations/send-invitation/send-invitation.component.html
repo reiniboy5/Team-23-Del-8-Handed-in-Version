@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+        <h1>Invitaitions</h1>
+    </div>
+    <hr>
+    <div class="row">
+        <h2>Select Artist to send invitation</h2>
+    </div>
+    <br>
+    <div class="row">
+        <label>Search Artists:</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Name, surname, username">
+            <div class="input-group-append">
+              <button class="btn btn-outline-success" type="button"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+          <br>  
+         
+    </div>
+    <br>
+    <div class="row" style="float: right;">
+        <button type="button" class="btn btn-primary btn-lg" style="margin-right: 20px;">Select All</button>
+        <button type="button" class="btn btn-success btn-lg"  (click)="onSend(invitationModal)">Send</button>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    
+    <mat-selection-list>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <!-- <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option>
+        <mat-list-option>Tom Cruise </mat-list-option> -->
+    </mat-selection-list>
+    <br>
+  
+</div>
+
+
+<!-- =========MODALS BELOW======================= -->
+
+<ng-template #invitationModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Send Invitation</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" >
+        <p>Are you sure you want to send Invitation?</p>
+      </div>
+      <br>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">No</button>
+      <button type="button" class="btn btn-primary" (click)="confirmSend(invitationModal)">Send</button>
+    </div>
+  </ng-template>

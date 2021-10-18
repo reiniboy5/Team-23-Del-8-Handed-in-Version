@@ -1,0 +1,111 @@
+<div
+  class="page-padding"
+  *ngFor="let artclass of listartclass; let indexofElementc = index"
+>
+  <div class="row">
+    <div class="col">
+      <h1>{{ artclass.artClassName }}</h1>
+    </div>
+    <div class="col">
+      <button
+        mdbBtn
+        type="button"
+        gradient="peach"
+        rounded="true"
+        style="float: right"
+        [routerLink]="['../art-classes']"
+        mdbWavesEffect
+      >
+        Back
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img
+        class="card-img-top"
+        src="{{ artClass.artClassImage }}"
+        alt="Card image cap"
+      />
+    </div>
+
+    <div class="col-8">
+      <p>{{ artclass.artClassDescription }}.</p>
+      <p>Class Type: {{ artclass.artClassType.artClassTypeDescription }}</p>
+      <p>
+        Teacher: {{ artclass.classTeacher.teacherName }}
+        {{ artclass.classTeacher.teacherSurname }}
+      </p>
+      <p>
+        Start-Date: {{ artclass.artClassStartDateTime | date: "mediumDate" }} at
+        {{ artclass.artClassStartDateTime | date: "shortTime" }}
+      </p>
+      <P
+        >End-Date: {{ artclass.artClassEndDateTime | date: "mediumDate" }} at
+        {{ artclass.artClassStartDateTime | date: "shortTime" }}</P
+      >
+
+      <p>Venue: {{ artclass.venue.venueDescription }}</p>
+      <p>Seats Open: 6</p>
+      <p>R {{ artclass.classPrice }} pp</p>
+      <hr />
+      <p>
+        <small
+          >* Refunds for a class is only available until
+          {{ artclass.refundDayLimit }} days before the class starts.</small
+        >
+      </p>
+      <button
+        mdbBtn
+        type="button"
+        gradient="purple"
+        rounded="true"
+        (click)="onBooking(bookModal)"
+        mdbWavesEffect
+      >
+        Book Class
+      </button>
+      <!-- <button mdbBtn type="button" gradient="blue" rounded="true" mdbWavesEffect>Teacher Details</button> -->
+    </div>
+  </div>
+  <!-- ==================================================================================== -->
+  <!-- =====================================================MODALS BELOW============================================ -->
+  <ng-template #bookModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Only Book for Class</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to book for this class?</p>
+    </div>
+    <div class="modal-footer">
+      <button
+        mdbBtn
+        type="button"
+        gradient="peach"
+        [routerLink]="['art-classes']"
+        rounded="true"
+        mdbWavesEffect
+      >
+        No
+      </button>
+      <button
+        mdbBtn
+        type="button"
+        gradient="purple"
+        (click)="submitBooking()"
+        rounded="true"
+        mdbWavesEffect
+      >
+        Yes
+      </button>
+    </div>
+  </ng-template>
+</div>

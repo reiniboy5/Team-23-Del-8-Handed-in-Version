@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Request to Purchase
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <ion-item>
+      <ion-label position="floating">First Name <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text" [(ngModel)]="service.purchaseData.FirstName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Last Name <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text" [(ngModel)]="service.purchaseData.LastName"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Contact Number <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text" [(ngModel)]="service.purchaseData.ContactNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email<ion-text color="danger">*</ion-text></ion-label>
+      <ion-input [(ngModel)]="service.purchaseData.Email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">ID Number <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input [(ngModel)]="service.purchaseData.IDNumber"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <div style="margin-top: 50px;">
+    <ion-button expand="block" style="width: 90%; margin:auto" (click)="onSubmit()">Buy this Art!</ion-button>
+  </div>
+
+
+</ion-content>

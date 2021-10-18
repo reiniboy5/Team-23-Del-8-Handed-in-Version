@@ -1,0 +1,181 @@
+<div class="container">
+  <div class="row">
+    <h1>Medium Types</h1>
+  </div>
+  <hr />
+  <div class="row">
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="addMedium(addMediumModal)"
+    >
+      Add Medium <i class="fas fa-plus"></i>
+    </button>
+  </div>
+  <hr />
+  <h2>Current Mediums</h2>
+  <table class="table">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Medium</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of mediumService.mediumList">
+        <th>{{ item.mediumTypeName }}</th>
+        <td>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="onDeleteMedium(deleteMediumModal)"
+          >
+            Remove <i class="fas fa-trash"></i>
+          </button>
+        </td>
+
+        <!-- Delete Modal -->
+        <ng-template #deleteMediumModal let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title">Confirm Surface Type</h4>
+            <button
+              type="button"
+              class="close"
+              aria-label="Close"
+              (click)="modal.dismiss('Cross click')"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to Delete this Medium type?</p>
+          </div>
+          <br />
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="modal.dismiss('Cross click')"
+            >
+              No
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="
+                confirmDeleteMedium(deleteMediumModal, item.mediumTypeID)
+              "
+            >
+              Yes
+            </button>
+          </div>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- MODALS Below================================= -->
+
+<ng-template #addMediumModal let-modal>
+  <form [formGroup]="mediumForm" (ngSubmit)="onSubmit()">
+    <div class="modal-header">
+      <h4 class="modal-title">Add Medium Type</h4>
+
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <br />
+    <h5 [hidden]="!mediumForm.invalid">
+      *Submit Button is disbaled, please enter all input values
+    </h5>
+    <div class="modal-body">
+      <label>Medium Name:</label>
+      <input
+        class="form-control"
+        style="width: 250px"
+        placeholder="Medium Type"
+        name="mediumTypeName"
+        formControlName="mediumTypeName"
+      />
+      <div class="validation-message">
+        <ng-container *ngFor="let value of validation_message.mediumTypeName">
+          <div
+            *ngIf="
+              mediumForm.get('mediumTypeName').hasError(value.type) &&
+              (mediumForm.get('mediumTypeName').dirty ||
+                mediumForm.get('mediumTypeName').touched)
+            "
+          >
+            {{ value.message }}
+          </div>
+        </ng-container>
+      </div>
+      <div class="success" *ngIf="mediumForm.get('mediumTypeName').valid">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <br />
+    </div>
+    <br />
+
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="modal.dismiss('Cross click')"
+      >
+        No
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        [disabled]="mediumForm.invalid"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</ng-template>
+
+<!-- =========MODALS BELOW======================= -->
+
+<!-- <ng-template #deleteMediumModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Delete Medium</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+    <p>Are you sure you want to delete this Medium?</p>
+    </div>
+    <br>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">No</button>
+    <button type="button" class="btn btn-primary" (click)="confirmDeleteMedium(deleteMediumModal)">Yes</button>
+  </div>
+</ng-template> -->
+
+<!-- <ng-template #deleteMediumModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Confirm Surface Type</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+    <p>Are you sure you want to Add this Surface type?</p>
+    </div>
+    <br>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">No</button>
+    <button type="button" class="btn btn-primary" (click)="confirmDeleteMedium(item.mediumTypeID)">Yes</button>
+  </div>
+</ng-template> -->

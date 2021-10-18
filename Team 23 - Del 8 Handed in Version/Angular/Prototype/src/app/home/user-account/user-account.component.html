@@ -1,0 +1,271 @@
+<form [formGroup]="userAccountForm" (ngSubmit)="onSubmit($event)">
+  <div class="container">
+    <!-- <div class="my-account"> -->
+    <img
+      src="../../../assets/art-class/art-class-poster.png"
+      alt=""
+      style="width: 900px; height: 300px"
+    />
+    <div class="bottom-left">
+      <div class="custom-file fileInputProfileWrap">
+        <input
+          type="file"
+          formControlName="profilePicture"
+          (change)="fileChangeEvent($event)"
+          class="fileInputProfile"
+        />
+        <div class="img-space">
+          <ng-container *ngIf="isImageSaved; else elseTemplate">
+            <img [src]="cardImageBase64" style="width: 100px; height: 100px" />
+          </ng-container>
+          <ng-template #elseTemplate>
+            <img
+              src="{{ user.profilePicture }}"
+              class="img-responsive"
+              style="width: 100px; height: 100px"
+            />
+          </ng-template>
+        </div>
+      </div>
+      <h1>{{ user.userFirstName }} {{ user.userLastName }}</h1>
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-rounded"
+        data-mdb-ripple-color="dark"
+      >
+        Click On Pic To Edit
+      </button>
+    </div>
+  </div>
+  <div class="profile-header">
+    <h3>My Account</h3>
+    <p>View and edit personal info below.</p>
+  </div>
+  <hr />
+  <div class="profile-card">
+    <div class="row">
+      <div class="col">
+        <label>First Name</label>
+        <input
+          formControlName="userFirstName"
+          type="text"
+          class="form-control"
+          style="width: 535px"
+          placeholder="Enter Name"
+        />
+        <div
+          class="error-messages"
+          *ngFor="let error of error_messages.userFirstName"
+        >
+          <div
+            style="position: static"
+            class="error-message"
+            *ngIf="
+              userAccountForm.get('userFirstName').hasError(error.type) &&
+              (userAccountForm.get('userFirstName').dirty ||
+                userAccountForm.get('userFirstName').touched)
+            "
+          >
+            {{ error.message }}
+          </div>
+        </div>
+        <div class="success" *ngIf="userAccountForm.get('userFirstName').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+        <label>Last Name</label>
+        <input
+          formControlName="userLastName"
+          type="text"
+          class="form-control"
+          style="width: 535px"
+          placeholder="Enter Surname"
+        />
+        <div
+          class="error-messages"
+          *ngFor="let error of error_messages.userLastName"
+        >
+          <div
+            style="position: static"
+            class="error-message"
+            *ngIf="
+              userAccountForm.get('userLastName').hasError(error.type) &&
+              (userAccountForm.get('userLastName').dirty ||
+                userAccountForm.get('userLastName').touched)
+            "
+          >
+            {{ error.message }}
+          </div>
+        </div>
+        <div class="success" *ngIf="userAccountForm.get('userLastName').valid">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <br />
+
+        <div>
+          <label>Email Address</label>
+          <input
+            formControlName="userEmail"
+            type="email"
+            class="form-control"
+            style="width: 535px"
+            placeholder="E-mail"
+          />
+          <div
+            class="error-messages"
+            *ngFor="let error of error_messages.userEmail"
+          >
+            <div
+              style="position: static"
+              class="error-message"
+              *ngIf="
+                userAccountForm.get('userEmail').hasError(error.type) &&
+                (userAccountForm.get('userEmail').dirty ||
+                  userAccountForm.get('userEmail').touched)
+              "
+            >
+              {{ error.message }}
+            </div>
+          </div>
+          <div class="success" *ngIf="userAccountForm.get('userEmail').valid">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+
+        <br />
+
+        <div *ngIf="user.userTypeID == 1">
+          <label>Artist Bio</label>
+          <textarea
+            type="text"
+            formControlName="artistBio"
+            class="form-control"
+            style="width: 600px; height: 200px"
+            placeholder="Artist Bio"
+          ></textarea>
+        </div>
+
+        <br />
+      </div>
+      <div class="col">
+        <div>
+          <label>Phone Number</label>
+          <input
+            formControlName="userPhoneNumber"
+            type="text"
+            class="form-control"
+            style="width: 535px"
+            placeholder="+ (27)"
+          />
+          <div
+            class="error-messages"
+            *ngFor="let error of error_messages.userPhoneNumber"
+          >
+            <div
+              style="position: static"
+              class="error-message"
+              *ngIf="
+                userAccountForm.get('userPhoneNumber').hasError(error.type) &&
+                (userAccountForm.get('userPhoneNumber').dirty ||
+                  userAccountForm.get('userPhoneNumber').touched)
+              "
+            >
+              {{ error.message }}
+            </div>
+          </div>
+          <div
+            class="success"
+            *ngIf="userAccountForm.get('userPhoneNumber').valid"
+          >
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+        <br />
+
+        <div>
+          <label>Address Line</label>
+          <input
+            formControlName="userAddressLine1"
+            type="email"
+            class="form-control"
+            style="width: 535px"
+            placeholder="Address Line"
+          />
+        </div>
+
+        <br />
+
+        <div>
+          <label>Postal Code</label>
+          <input
+            formControlName="userPostalCode"
+            type="email"
+            class="form-control"
+            style="width: 535px"
+            placeholder="Postal Code"
+          />
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+
+  <button
+    mdbBtn
+    type="button"
+    (click)="onSubmit($event)"
+    gradient="purple"
+    rounded="true"
+    mdbWavesEffect
+    style="margin-left: 100px"
+  >
+    Update Info
+  </button>
+
+  <button
+    mdbBtn
+    type="button"
+    (click)="backHome($event)"
+    gradient="red"
+    rounded="true"
+    mdbWavesEffect
+  >
+    Back
+  </button>
+</form>
+<br />
+
+<!-- ============================================================================ -->
+<!-- ===============MODALS BELOW========================================================================================================== 
+
+<ng-template #updateUserModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Update User Profile</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want update your profile details?</p>
+  </div>
+  <div class="modal-footer">
+    <button mdbBtn type="button" gradient="peach" rounded="true" (click)="modal.dismiss('Cross click')"  mdbWavesEffect>No</button>
+
+    <button
+      mdbBtn
+     
+      gradient="purple"
+      type="submit" (click)="onSubmit($event)" 
+      rounded="true"
+      mdbWavesEffect
+    >
+      Yes
+    </button>
+  </div>
+</ng-template>
+-->

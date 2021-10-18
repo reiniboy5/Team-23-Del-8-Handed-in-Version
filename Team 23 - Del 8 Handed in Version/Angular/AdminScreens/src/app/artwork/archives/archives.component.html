@@ -1,0 +1,105 @@
+<div class="container">
+  <h1>Archives</h1>
+    <div class="row">
+      
+      <div class="col">
+       
+      </div>
+      <div class="col">
+        <!-- <button type="button" class="btn btn-danger" style="float: right;" [routerLink]="['/artworks']">Back</button> -->
+      </div>
+    </div>
+    <hr>
+    <h2>Archive Status</h2>
+    <br>
+        <button type="button" class="btn btn-primary" style="float: right; margin-bottom: 20px;" [routerLink]="['/artworks']">Save</button>
+
+    <table class="table">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">Title</th>
+            <th scope="col">Medium</th>
+            <th scope="col">Surface</th>
+            <th scope="col">Dimmensions</th>
+            <th scope="col">Price</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ori Blind Forest</td>
+            <td>Ink</td>
+            <td>Digital</td>
+            <td>1000mm-562mm</td>
+            <td>R 1500.00</td>
+            <td>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option value="1">Display</option>
+                        <option value="2">Exhibition</option>
+                        <option value="3">Storeroom</option>
+                        <option value="4">Returned</option>
+                    </select>
+                  </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Colourful Character</td>
+            <td>Painting</td>
+            <td>Surface</td>
+            <td>600mm-600mm</td>
+            <td>R 2000.00</td>
+            <td>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                      <option value="1">Returned</option>
+                      <option value="2">Exhibition</option>
+                      <option value="3">Display</option>
+                      <option value="4">Storeroom</option>
+
+                    </select>
+                  </div>            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- <ng-template #removeArtistModal let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Remove Artist from Exhibition</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+      <p>Are you sure you want to remove this Artist from the exhibition?</p>
+          </div>
+          <br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">No</button>
+          <button type="button" class="btn btn-primary" (click)="confirmRemove(removeArtistModal)">Yes</button>
+        </div>
+      </ng-template>
+
+
+      <ng-template #removeAllArtistModal let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Remove All Selected Artists</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+      <p>Are you sure you want to remove all the selected artists fromt the exhibition?</p>
+          </div>
+          <br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="modal.dismiss('Cross click')">No</button>
+          <button type="button" class="btn btn-primary" (click)="confirmRemoveAll(removeAllArtistModal)">Yes</button>
+        </div>
+      </ng-template> -->

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <h1>Send Invitation</h1>
+    </div>
+    <hr>
+    <div class="row">
+        <label>Select Exhibition:</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          
+          
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Enter Message Here:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+          </div>
+          <hr>
+
+          <button type="button" class="btn btn-success btn-lg" [routerLink]="['/send-invitation']">Send</button></div>

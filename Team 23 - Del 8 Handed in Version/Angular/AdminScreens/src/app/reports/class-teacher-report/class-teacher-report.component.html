@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <h1>Booking Report</h1>
+  </div>
+  <hr />
+  <div class="row">
+    <label>Select Difficulty Level:</label>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend"></div>
+      <select
+        class="custom-select"
+        id="inputGroupSelect01"
+        [(ngModel)]="selection"
+      >
+        <option *ngFor="let option of options" [value]="option.id">
+          {{ option.text }}
+        </option>
+      </select>
+    </div>
+    <br />
+
+    <br />
+    <br />
+    <br />
+    <button type="button" class="btn btn-primary" (click)="submitRequest()">
+      Generate Booking Report
+    </button>
+  </div>
+  <hr />
+  <br />
+  <div id="pdf">
+    <div *ngIf="chart" class="reportChart">
+      <canvas id="canvas" style="height: 30%">{{ chart }}</canvas>
+    </div>
+    <div class="mt-5" *ngIf="classes">
+      <div class="gradeTable">
+        <div *ngFor="let item of classes">
+          <table class="table table-striped" style="table-layout: fixed">
+            <caption style="text-align: center">
+              <strong>Art Class: </strong>
+              {{
+                item.ClassName
+              }}
+              <br />
+              <i> (Number of Bookings: {{ item.Sum }})</i>
+            </caption>
+            <thead>
+              <br /><br /><br />
+              <tr class="table-primary">
+                <th>Booking Date</th>
+                <th>Student</th>
+                <th>Art Class</th>
+              </tr>
+            </thead>
+            <tr *ngFor="let rate of item.Booking">
+              <td>{{ rate.Date | date }}</td>
+              <td>{{ rate.UserFirstName }}</td>
+              <td>{{ rate.Class }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" style="margin-right: 15px">
+    Export
+  </button>
+  <button type="button" class="btn btn-primary" (click)="download()">
+    Print
+  </button>
+
+  <div class="row">
+    <br />
+  </div>
+</div>

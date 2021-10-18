@@ -1,0 +1,38 @@
+<div class="container">
+  <form [formGroup]="timerForm" (ngSubmit)="onSubmit()">
+    <h1>Set Timer</h1>
+    <h3 [hidden]="!timerForm.invalid">
+      *Set Time Button is disbaled, please enter a value
+    </h3>
+    <input
+      class="form-control"
+      type="number"
+      name="timerSet"
+      formControlName="timerSet"
+    />
+    <div class="validation-message">
+      <ng-container *ngFor="let value of validation_message.timerSet">
+        <div
+          *ngIf="
+            timerForm.get('timerSet').hasError(value.type) &&
+            (timerForm.get('timerSet').dirty ||
+              timerForm.get('timerSet').touched)
+          "
+        >
+          {{ value.message }}
+        </div>
+      </ng-container>
+    </div>
+    <div class="success" *ngIf="timerForm.get('timerSet').valid">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <br />
+    <button
+      class="btn btn-primary"
+      [disabled]="timerForm.invalid"
+      type="submit"
+    >
+      Set Time
+    </button>
+  </form>
+</div>
